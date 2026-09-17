@@ -7,6 +7,7 @@ import {
   Rectangle,
   shell,
 } from 'electron';
+import fs from 'fs-extra';
 import ms from 'ms';
 import { TAB_BAR_WIDTH, TODOS_RECIPE_ID } from '../config';
 import { DEFAULT_APP_SETTINGS_VANILLA } from '../configVanilla';
@@ -14,7 +15,7 @@ import { buildMenuTpl } from '../electron/serviceContextMenuTemplate';
 import Settings from '../electron/Settings';
 import { isMac } from '../environment';
 import { IPC } from '../features/todos/constants';
-import { getRecipeDirectory, loadRecipeConfig } from '../helpers/recipe-helpers';
+import { getRecipeDirectory, getDevRecipeDirectory, loadRecipeConfig } from '../helpers/recipe-helpers';
 import { isValidExternalURL } from '../helpers/url-helpers';
 import userAgent from '../helpers/userAgent-helpers';
 import {
@@ -26,6 +27,8 @@ import {
 import RecipeModel from './Recipe';
 
 const debug = require('debug')('Franz:Models:ServiceBrowserView');
+
+const isGoogleOAuthURL = (url: string) => /\/(o\/oauth2|signin\/oauth|oauth)/.test(new URL(url).pathname);
 
 interface IServiceState {
   isActive: boolean,
@@ -102,8 +105,10 @@ export class ServiceBrowserView {
     this.window = window;
     this.settings = settings;
 
+    const installedRecipePath = getRecipeDirectory(this.recipeId);
+    const recipePath = fs.existsSync(installedRecipePath) ? installedRecipePath : getDevRecipeDirectory(this.recipeId);
     // eslint-disable-next-line import/no-dynamic-require, global-require
-    const Recipe = require(getRecipeDirectory(this.recipeId))(RecipeModel);
+    const Recipe = require(recipePath)(RecipeModel);
     this.recipe = new Recipe(loadRecipeConfig(this.recipeId));
 
     if (!state.isRestricted) {
@@ -251,6 +256,12 @@ export class ServiceBrowserView {
         }
       });
 
+      this.webContents.on('did-create-window', (childWindow, { url }) => {
+        if (url.startsWith('https://accounts.google.com')) {
+          childWindow.webContents.setUserAgent(userAgent(true));
+        }
+      });
+
       this.webContents.setWindowOpenHandler(({
         url, disposition, ...rest
       }) => {
@@ -272,8 +283,20 @@ export class ServiceBrowserView {
           action = 'deny';
 
           if (url.startsWith('https://accounts.google.com')) {
-            // Google sign-in links use target=_blank; keep the login inside the service.
-            this.webContents.loadURL(url);
+            if (isGoogleOAuthURL(url)) {
+              // OAuth popups (e.g. "Sign in with Google" on claude.ai) must stay a
+              // popup in the same session so the opener receives the result.
+              action = 'allow';
+              overrideBrowserWindowOptions = {
+                ...overrideBrowserWindowOptions,
+                webPreferences: {
+                  partition: this.config.partition,
+                },
+              };
+            } else {
+              // Plain sign-in links (Gmail landing page) use target=_blank; keep them inside the service.
+              this.webContents.loadURL(url);
+            }
           } else if (isValidExternalURL(url)) {
             shell.openExternal(url);
           }
