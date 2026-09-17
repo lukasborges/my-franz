@@ -158,11 +158,10 @@ export class ServiceBrowserView {
       }
 
       this.window.addBrowserView(this.view);
+      // No setAutoResize: it fights the explicit bounds sent by the renderer's
+      // ResizeObserver and makes the view drift after maximize/restore, which
+      // exposes the draggable title bar underneath (dead clicks, double-click maximizes).
       this.view.setBounds(this.bounds);
-      this.view.setAutoResize({
-        width: true,
-        height: true,
-      });
       this.view.setBackgroundColor('white');
 
       this.isAttached = true;
@@ -449,9 +448,16 @@ export class ServiceBrowserView {
       y: parseInt((y ?? bounds.y).toFixed(), 10),
     };
 
+    debug('resize', this.config.name, newBounds);
     this.view.setBounds(newBounds);
 
     this.bounds = newBounds;
+  }
+
+  reapplyBounds() {
+    if (this.isAttached && this.bounds) {
+      this.view.setBounds(this.bounds);
+    }
   }
 
   focus() {

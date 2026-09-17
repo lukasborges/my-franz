@@ -131,7 +131,7 @@ const resizeObserver = new window.ResizeObserver(([element]) => {
     width: bounds.width,
     height: bounds.height,
     x: bounds.x,
-    y: element.target.offsetTop,
+    y: bounds.y,
   });
 });
 

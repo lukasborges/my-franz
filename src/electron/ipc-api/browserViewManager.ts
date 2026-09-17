@@ -233,6 +233,13 @@ export default async ({ mainWindow, settings: { app: settings } }: { mainWindow:
     }
   });
 
+  const reapplyBounds = () => browserViews.forEach(bw => bw.browserView.reapplyBounds());
+  mainWindow.on('resize', reapplyBounds);
+  mainWindow.on('maximize', reapplyBounds);
+  mainWindow.on('unmaximize', reapplyBounds);
+  mainWindow.on('enter-full-screen', reapplyBounds);
+  mainWindow.on('leave-full-screen', reapplyBounds);
+
   ipcMain.on(RESIZE_SERVICE_VIEWS, (e, bounds: Rectangle) => {
     debug('Resizing service views by', bounds);
 
