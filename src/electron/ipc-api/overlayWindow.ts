@@ -61,9 +61,6 @@ export function openOverlay(mainWindow: BrowserWindow, settings: any, args: IArg
         },
       });
 
-      // eslint-disable-next-line global-require
-      require('@electron/remote/main').enable(window.webContents);
-
       window.once('ready-to-show', () => {
         window.show();
         window.webContents.focus();

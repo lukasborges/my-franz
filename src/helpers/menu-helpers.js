@@ -1,5 +1,11 @@
 import { ipcRenderer } from 'electron';
-import { DIALOG_MESSAGE_BOX, MENU_POPUP } from '../ipcChannels';
+import {
+  APPLICATION_MENU_CLICK,
+  APPLICATION_MENU_POPUP,
+  APPLICATION_MENU_SET,
+  DIALOG_MESSAGE_BOX,
+  MENU_POPUP,
+} from '../ipcChannels';
 
 /**
  * Splits a menu template into data the main process can receive and the click
@@ -48,4 +54,38 @@ export async function popupMenu(template) {
  */
 export function showMessageBox(options) {
   return ipcRenderer.invoke(DIALOG_MESSAGE_BOX, options);
+}
+
+// Handlers of the application menu currently installed in the main process.
+let applicationMenuHandlers = {};
+
+ipcRenderer.on(APPLICATION_MENU_CLICK, (event, id) => {
+  const handler = applicationMenuHandlers[id];
+
+  if (handler) handler();
+});
+
+/**
+ * Installs the application menu. The template is rebuilt often, so the handler
+ * map is replaced wholesale on every call.
+ */
+export function setApplicationMenu(template) {
+  const handlers = {};
+  const serialised = serialise(template, handlers);
+
+  applicationMenuHandlers = handlers;
+  ipcRenderer.send(APPLICATION_MENU_SET, serialised);
+}
+
+/**
+ * Installs the application menu and immediately opens it at the given point,
+ * for the in-window menu button on Windows and Linux.
+ */
+export function popupApplicationMenu(template, { x, y } = {}) {
+  const handlers = {};
+  const serialised = serialise(template, handlers);
+
+  applicationMenuHandlers = handlers;
+
+  return ipcRenderer.invoke(APPLICATION_MENU_POPUP, { template: serialised, x, y });
 }

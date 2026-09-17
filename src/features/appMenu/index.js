@@ -5,6 +5,7 @@ import { PropTypes } from 'prop-types';
 import React, { Component } from 'react';
 import { intlShape } from 'react-intl';
 import injectSheet from 'react-jss';
+import { popupApplicationMenu } from '../../helpers/menu-helpers';
 import { AppMenu } from '../../lib/Menu';
 import AppStore from '../../stores/AppStore';
 import SettingsStore from '../../stores/SettingsStore';
@@ -104,7 +105,7 @@ class AppMenuBar extends Component {
 
       const buttonPos = this.buttonRef.current.getBoundingClientRect();
 
-      this.appMenu.menu.popup({
+      popupApplicationMenu(this.appMenu.template, {
         x: parseInt(buttonPos.x, 10),
         y: parseInt(buttonPos.y + buttonPos.height + 10, 10),
       });

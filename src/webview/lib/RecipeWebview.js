@@ -68,7 +68,9 @@ class RecipeWebview {
     files.forEach((file) => {
       const data = fs.readFileSync(file);
       const styles = document.createElement('style');
-      styles.innerHTML = data.toString();
+      // textContent, not innerHTML: sites with a Trusted Types policy (Google)
+      // reject assigning a plain string to innerHTML.
+      styles.textContent = data.toString();
 
       document.querySelector('head').appendChild(styles);
 

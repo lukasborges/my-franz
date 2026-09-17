@@ -9,14 +9,12 @@ import {
 } from 'electron';
 
 // import isDevMode from 'electron-is-dev';
-import * as remoteMain from '@electron/remote/main';
 import { enforceMacOSAppLocation } from 'electron-util';
 import windowStateKeeper from 'electron-window-state';
 import { EventEmitter } from 'events';
 import fs from 'fs-extra';
 import path from 'path';
 
-remoteMain.initialize();
 
 import {
   isLinux,
@@ -216,7 +214,6 @@ const createWindow = () => {
     },
   });
 
-  remoteMain.enable(mainWindow.webContents);
 
   mainWindow.webContents.on('did-finish-load', () => {
     const fns = onDidLoadFns;

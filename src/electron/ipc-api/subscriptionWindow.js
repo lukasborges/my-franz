@@ -1,5 +1,4 @@
 import { BrowserWindow, ipcMain } from 'electron';
-import * as remoteMain from '@electron/remote/main';
 
 const debug = require('debug')('Franz:ipcApi:subscriptionWindow');
 
@@ -24,8 +23,6 @@ export default async ({ mainWindow }) => {
           contextIsolation: false,
         },
       });
-
-      remoteMain.enable(subscriptionWindow.webContents);
 
       subscriptionWindow.loadURL(`file://${__dirname}/../../index.html#/payment/${encodeURIComponent(url)}`);
 

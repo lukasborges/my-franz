@@ -1,13 +1,9 @@
-import {
-  app,
-  dialog,
-  getCurrentWindow,
-  Menu,
-  webContents,
-} from '@electron/remote';
 import { ipcRenderer, shell } from 'electron';
 import { autorun, observable } from 'mobx';
 import { defineMessages } from 'react-intl';
+import appValues from '../helpers/app-helpers';
+import { setApplicationMenu, showMessageBox } from '../helpers/menu-helpers';
+import { invokeWebContents, sendToWebContents } from '../helpers/webContents-helpers';
 
 import { DEFAULT_WEB_CONTENTS_ID } from '../config';
 import { cmdKey, ctrlKey, isMac } from '../environment';
@@ -20,6 +16,7 @@ import { workspaceActions } from '../features/workspaces/actions';
 import { GA_CATEGORY_WORKSPACES, workspaceStore } from '../features/workspaces/index';
 import {
   ACTIVATE_NEXT_SERVICE, ACTIVATE_PREVIOUS_SERVICE, ACTIVATE_SERVICE,
+  APP_CLOSE_WINDOW, APP_MINIMIZE_WINDOW, APP_QUIT,
   GET_ACTIVE_SERVICE_WEB_CONTENTS_ID, OPEN_SERVICE_DEV_TOOLS, RELOAD_APP, RELOAD_SERVICE, SETTINGS_NAVIGATE_TO, TODOS_OPEN_DEV_TOOLS, TODOS_RELOAD, TODOS_TOGGLE_DRAWER, TODOS_TOGGLE_ENABLE_TODOS, TOGGLE_FULL_SCREEN, WORKSPACE_ACTIVATE, WORKSPACE_OPEN_SETTINGS, WORKSPACE_TOGGLE_DRAWER,
 } from '../ipcChannels';
 import { gaEvent } from './analytics';
@@ -283,9 +280,8 @@ export const menuItems = defineMessages({
   },
 });
 
-async function getActiveWebContents() {
-  const webContentsId = await ipcRenderer.invoke(GET_ACTIVE_SERVICE_WEB_CONTENTS_ID);
-  return webContents.fromId(webContentsId);
+async function getActiveWebContentsId() {
+  return ipcRenderer.invoke(GET_ACTIVE_SERVICE_WEB_CONTENTS_ID);
 }
 
 const _templateFactory = intl => [
@@ -323,7 +319,7 @@ const _templateFactory = intl => [
         accelerator: 'Cmd+Shift+V',
         selector: 'pasteAndMatchStyle:',
         async click() {
-          (await getActiveWebContents()).pasteAndMatchStyle();
+          invokeWebContents(await getActiveWebContentsId(), 'pasteAndMatchStyle');
         },
       },
       {
@@ -347,39 +343,37 @@ const _templateFactory = intl => [
         label: intl.formatMessage(menuItems.resetZoom),
         accelerator: 'Cmd+0',
         async click() {
-          const activeService = await getActiveWebContents();
-          activeService.setZoomLevel(0);
+          invokeWebContents(await getActiveWebContentsId(), 'setZoomLevel', 0);
         },
       },
       {
         label: intl.formatMessage(menuItems.zoomIn),
         accelerator: 'Cmd+plus',
         async click() {
-          const activeService = await getActiveWebContents();
-          const level = activeService.getZoomLevel();
+          const id = await getActiveWebContentsId();
+          const level = await invokeWebContents(id, 'getZoomLevel');
 
           // level 9 =~ +300% and setZoomLevel wouldnt zoom in further
-          if (level < 9) activeService.setZoomLevel(level + 1);
+          if (level < 9) invokeWebContents(id, 'setZoomLevel', level + 1);
         },
       },
       {
         label: intl.formatMessage(menuItems.zoomOut),
         accelerator: 'Cmd+-',
         async click() {
-          const activeService = await getActiveWebContents();
-          const level = activeService.getZoomLevel();
+          const id = await getActiveWebContentsId();
+          const level = await invokeWebContents(id, 'getZoomLevel');
 
           // level -9 =~ -50% and setZoomLevel wouldnt zoom out further
-          if (level > -9) activeService.setZoomLevel(level - 1);
+          if (level > -9) invokeWebContents(id, 'setZoomLevel', level - 1);
         },
       },
       {
         type: 'separator',
       },
       {
-        label: app.mainWindow.isFullScreen() // label doesn't work, gets overridden by Electron
-          ? intl.formatMessage(menuItems.exitFullScreen)
-          : intl.formatMessage(menuItems.enterFullScreen),
+        // Electron overrides this label for the togglefullscreen role.
+        label: intl.formatMessage(menuItems.enterFullScreen),
         role: 'togglefullscreen',
       },
     ],
@@ -451,7 +445,7 @@ const _templateFactory = intl => [
 
 export const _titleBarTemplateFactory = ({ user, intl }) => [
   {
-    label: app.name,
+    label: appValues().name,
     submenu: [
       {
         label: intl.formatMessage(menuItems.reloadFranz),
@@ -464,14 +458,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.toggleDevTools),
         accelerator: `${cmdKey}+Alt+I`,
         click: () => {
-          const windowWebContents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-          const { isDevToolsOpened, openDevTools, closeDevTools } = windowWebContents;
-
-          if (isDevToolsOpened()) {
-            closeDevTools();
-          } else {
-            openDevTools({ mode: 'detach' });
-          }
+          invokeWebContents(DEFAULT_WEB_CONTENTS_ID, 'toggleDevTools');
         },
       },
       {
@@ -481,11 +468,11 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.about),
         role: 'about',
         click: () => {
-          dialog.showMessageBox({
+          showMessageBox({
             type: 'info',
             title: 'Franz',
             message: 'Franz',
-            detail: `Version: ${app.getVersion()}\nRelease: ${process.versions.electron} / ${process.platform} / ${process.arch}`,
+            detail: `Version: ${appValues().version}\nRelease: ${process.versions.electron} / ${process.platform} / ${process.arch}`,
           });
         },
       },
@@ -582,7 +569,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.undo),
         accelerator: `${ctrlKey}+Z`,
         async click() {
-          (await getActiveWebContents()).undo();
+          invokeWebContents(await getActiveWebContentsId(), 'undo');
         },
         action: {
           action: 'undo',
@@ -592,7 +579,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.redo),
         accelerator: `${ctrlKey}+Y`,
         async click() {
-          (await getActiveWebContents()).redo();
+          invokeWebContents(await getActiveWebContentsId(), 'redo');
         },
         action: {
           action: 'redo',
@@ -605,7 +592,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.cut),
         accelerator: `${ctrlKey}+X`,
         async click() {
-          (await getActiveWebContents()).cut();
+          invokeWebContents(await getActiveWebContentsId(), 'cut');
         },
         action: {
           action: 'cut',
@@ -615,7 +602,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.copy),
         accelerator: `${ctrlKey}+C`,
         async click() {
-          (await getActiveWebContents()).copy();
+          invokeWebContents(await getActiveWebContentsId(), 'copy');
         },
         action: {
           action: 'copy',
@@ -625,7 +612,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.paste),
         accelerator: `${ctrlKey}+V`,
         async click() {
-          (await getActiveWebContents()).paste();
+          invokeWebContents(await getActiveWebContentsId(), 'paste');
         },
         action: {
           action: 'paste',
@@ -635,7 +622,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.pasteAndMatchStyle),
         accelerator: `${ctrlKey}+Shift+V`,
         async click() {
-          (await getActiveWebContents()).pasteAndMatchStyle();
+          invokeWebContents(await getActiveWebContentsId(), 'pasteAndMatchStyle');
         },
         action: {
           action: 'pasteAndMatchStyle',
@@ -644,7 +631,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
       {
         label: intl.formatMessage(menuItems.delete),
         async click() {
-          (await getActiveWebContents()).delete();
+          invokeWebContents(await getActiveWebContentsId(), 'delete');
         },
         action: {
           action: 'delete',
@@ -654,7 +641,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.selectAll),
         accelerator: `${ctrlKey}+A`,
         async click() {
-          (await getActiveWebContents()).selectAll();
+          invokeWebContents(await getActiveWebContentsId(), 'selectAll');
         },
         action: {
           action: 'selectAll',
@@ -675,14 +662,14 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.minimize),
         accelerator: 'Ctrl+M',
         click() {
-          getCurrentWindow().minimize();
+          ipcRenderer.send(APP_MINIMIZE_WINDOW);
         },
       },
       {
         label: intl.formatMessage(menuItems.close),
         accelerator: 'Ctrl+W',
         click() {
-          getCurrentWindow().close();
+          ipcRenderer.send(APP_CLOSE_WINDOW);
         },
       },
     ],
@@ -691,7 +678,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
     label: intl.formatMessage(menuItems.quit),
     role: 'quit',
     click() {
-      app.quit();
+      ipcRenderer.send(APP_QUIT);
     },
   },
 ];
@@ -724,8 +711,7 @@ function serviceMenu({
     accelerator: `${cmdKey}+N`,
     enabled: user.isLoggedIn,
     click: () => {
-      const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-      contents.send(SETTINGS_NAVIGATE_TO, { path: 'recipes' });
+      sendToWebContents(DEFAULT_WEB_CONTENTS_ID, SETTINGS_NAVIGATE_TO, { path: 'recipes' });
     },
   }, {
     type: 'separator',
@@ -734,16 +720,14 @@ function serviceMenu({
     accelerator: `${cmdKey}+alt+right`,
     enabled: user.isLoggedIn,
     click: () => {
-      const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-      contents.send(ACTIVATE_NEXT_SERVICE);
+      sendToWebContents(DEFAULT_WEB_CONTENTS_ID, ACTIVATE_NEXT_SERVICE);
     },
   }, {
     label: intl.formatMessage(menuItems.activatePreviousService),
     accelerator: `${cmdKey}+alt+left`,
     enabled: user.isLoggedIn,
     click: () => {
-      const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-      contents.send(ACTIVATE_PREVIOUS_SERVICE);
+      sendToWebContents(DEFAULT_WEB_CONTENTS_ID, ACTIVATE_PREVIOUS_SERVICE);
     },
   });
 
@@ -759,8 +743,7 @@ function serviceMenu({
     type: 'radio',
     checked: service.isActive,
     click: () => {
-      const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-      contents.send(ACTIVATE_SERVICE, { serviceId: service.id });
+      sendToWebContents(DEFAULT_WEB_CONTENTS_ID, ACTIVATE_SERVICE, { serviceId: service.id });
     },
   })));
 
@@ -780,8 +763,7 @@ function serviceMenu({
         && services.length > 0) {
             ipcRenderer.send(RELOAD_SERVICE);
           } else {
-            const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-            contents.send(RELOAD_APP);
+            sendToWebContents(DEFAULT_WEB_CONTENTS_ID, RELOAD_APP);
           }
         },
       });
@@ -815,8 +797,7 @@ function workspacesMenu({
     label: intl.formatMessage(menuItems.addNewWorkspace),
     accelerator: `${cmdKey}+Shift+N`,
     click: () => {
-      const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-      contents.send(WORKSPACE_OPEN_SETTINGS);
+      sendToWebContents(DEFAULT_WEB_CONTENTS_ID, WORKSPACE_OPEN_SETTINGS);
     },
     enabled: user.isLoggedIn,
   });
@@ -829,8 +810,7 @@ function workspacesMenu({
     label: intl.formatMessage(drawerLabel),
     accelerator: `${cmdKey}+D`,
     click: () => {
-      const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-      contents.send(WORKSPACE_TOGGLE_DRAWER);
+      sendToWebContents(DEFAULT_WEB_CONTENTS_ID, WORKSPACE_TOGGLE_DRAWER);
       gaEvent(GA_CATEGORY_WORKSPACES, 'toggleDrawer', 'menu');
     },
     enabled: user.isLoggedIn,
@@ -845,8 +825,7 @@ function workspacesMenu({
     type: 'radio',
     checked: !activeWorkspace,
     click: () => {
-      const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-      contents.send(WORKSPACE_ACTIVATE);
+      sendToWebContents(DEFAULT_WEB_CONTENTS_ID, WORKSPACE_ACTIVATE);
       gaEvent(GA_CATEGORY_WORKSPACES, 'switch', 'menu');
     },
   });
@@ -859,8 +838,7 @@ function workspacesMenu({
       type: 'radio',
       checked: activeWorkspace ? workspace.id === activeWorkspace.id : false,
       click: () => {
-        const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-        contents.send(WORKSPACE_ACTIVATE, { workspaceId: workspace.id });
+        sendToWebContents(DEFAULT_WEB_CONTENTS_ID, WORKSPACE_ACTIVATE, { workspaceId: workspace.id });
         gaEvent(GA_CATEGORY_WORKSPACES, 'switch', 'menu');
       },
     }));
@@ -880,8 +858,7 @@ function todosMenu({
     label: intl.formatMessage(drawerLabel),
     accelerator: `${cmdKey}+T`,
     click: () => {
-      const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-      contents.send(TODOS_TOGGLE_DRAWER);
+      sendToWebContents(DEFAULT_WEB_CONTENTS_ID, TODOS_TOGGLE_DRAWER);
 
       gaEvent(GA_CATEGORY_TODOS, 'toggleDrawer', 'menu');
     },
@@ -910,8 +887,7 @@ function todosMenu({
     }, {
       label: intl.formatMessage(menuItems.enableTodos),
       click: () => {
-        const contents = webContents.fromId(DEFAULT_WEB_CONTENTS_ID);
-        contents.send(TODOS_TOGGLE_ENABLE_TODOS);
+        sendToWebContents(DEFAULT_WEB_CONTENTS_ID, TODOS_TOGGLE_ENABLE_TODOS);
         gaEvent(GA_CATEGORY_TODOS, 'enable', 'menu');
       },
     });
@@ -922,42 +898,43 @@ function todosMenu({
 
 function viewMenu({
   intl,
+  isFullScreen,
 }) {
   const tpl = [
     {
       label: intl.formatMessage(menuItems.resetZoom),
       accelerator: `${ctrlKey}+0`,
       async click() {
-        (await getActiveWebContents()).setZoomLevel(0);
+        invokeWebContents(await getActiveWebContentsId(), 'setZoomLevel', 0);
       },
     },
     {
       label: intl.formatMessage(menuItems.zoomIn),
       accelerator: `${ctrlKey}+=`,
       async click() {
-        const activeService = await getActiveWebContents();
-        const level = activeService.getZoomLevel();
+        const id = await getActiveWebContentsId();
+        const level = await invokeWebContents(id, 'getZoomLevel');
 
         // level 9 =~ +300% and setZoomLevel wouldnt zoom in further
-        if (level < 9) activeService.setZoomLevel(level + 1);
+        if (level < 9) invokeWebContents(id, 'setZoomLevel', level + 1);
       },
     },
     {
       label: intl.formatMessage(menuItems.zoomOut),
       accelerator: `${ctrlKey}+-`,
       async click() {
-        const activeService = await getActiveWebContents();
-        const level = activeService.getZoomLevel();
+        const id = await getActiveWebContentsId();
+        const level = await invokeWebContents(id, 'getZoomLevel');
 
         // level -9 =~ -50% and setZoomLevel wouldnt zoom out further
-        if (level > -9) activeService.setZoomLevel(level - 1);
+        if (level > -9) invokeWebContents(id, 'setZoomLevel', level - 1);
       },
     },
     {
       type: 'separator',
     },
     {
-      label: app.mainWindow.isFullScreen() // label doesn't work, gets overridden by Electron
+      label: isFullScreen
         ? intl.formatMessage(menuItems.exitFullScreen)
         : intl.formatMessage(menuItems.enterFullScreen),
       accelerator: 'F11',
@@ -1014,14 +991,7 @@ export default class FranzMenu {
       label: intl.formatMessage(menuItems.toggleDevTools),
       accelerator: `${cmdKey}+Alt+I`,
       click: () => {
-        const windowWebContents = webContents.fromId(1);
-        const { isDevToolsOpened, openDevTools, closeDevTools } = windowWebContents;
-
-        if (isDevToolsOpened()) {
-          closeDevTools();
-        } else {
-          openDevTools({ mode: 'detach' });
-        }
+        invokeWebContents(DEFAULT_WEB_CONTENTS_ID, 'toggleDevTools');
       },
     }, {
       label: intl.formatMessage(menuItems.toggleServiceDevTools),
@@ -1075,7 +1045,7 @@ export default class FranzMenu {
     });
 
     tpl.unshift({
-      label: isMac ? app.name : intl.formatMessage(menuItems.file),
+      label: isMac ? appValues().name : intl.formatMessage(menuItems.file),
       submenu: [
         {
           label: intl.formatMessage(menuItems.about),
@@ -1128,7 +1098,7 @@ export default class FranzMenu {
           label: intl.formatMessage(menuItems.quit),
           role: 'quit',
           click() {
-            app.quit();
+            ipcRenderer.send(APP_QUIT);
           },
         },
       ],
@@ -1137,11 +1107,11 @@ export default class FranzMenu {
     const about = {
       label: intl.formatMessage(menuItems.about),
       click: () => {
-        dialog.showMessageBox({
+        showMessageBox({
           type: 'info',
           title: 'Franz',
           message: 'Franz',
-          detail: `Version: ${app.getVersion()}\nRelease: ${process.versions.electron} / ${process.platform} / ${process.arch}`,
+          detail: `Version: ${appValues().version}\nRelease: ${process.versions.electron} / ${process.platform} / ${process.arch}`,
         });
       },
     };
@@ -1188,7 +1158,7 @@ export default class FranzMenu {
           role: 'quit',
           accelerator: 'Ctrl+Q',
           click() {
-            app.quit();
+            ipcRenderer.send(APP_QUIT);
           },
         },
       ];
@@ -1215,8 +1185,7 @@ export default class FranzMenu {
     }, this.debugMenu());
 
     this.currentTemplate = tpl;
-    const menu = Menu.buildFromTemplate(tpl);
-    Menu.setApplicationMenu(menu);
+    setApplicationMenu(tpl);
   }
 
   workspacesMenu() {
@@ -1364,15 +1333,18 @@ export class AppMenu {
     this.intl = intl;
   }
 
-  get menu() {
+  get template() {
     if (!this.intl) {
       console.warn('`intl` is not set');
-      return;
+      return null;
     }
 
     const baseTpl = /* isMac ? _templateFactory(this.intl) : */ _titleBarTemplateFactory({ user: this.menuData.user, intl: this.intl });
     const viewTpl = viewMenu({
-      user: this.menuData.user, services: this.menuData.services, intl: this.intl,
+      user: this.menuData.user,
+      services: this.menuData.services,
+      intl: this.intl,
+      isFullScreen: this.menuData.app.isFullScreen,
     });
     const serviceTpl = serviceMenu({
       services: this.menuData.services, user: this.menuData.user, intl: this.intl, showReload: true, showToggleDevTools: true,
@@ -1389,13 +1361,6 @@ export class AppMenu {
     baseTpl[4].submenu = todosTpl;
     baseTpl[12].submenu = viewTpl;
 
-    const menu = Menu.buildFromTemplate(baseTpl);
-    Menu.setApplicationMenu(menu);
-
-    menu.on('menu-will-show', () => this.onShow);
-
-    menu.on('menu-will-close', () => this.onClose);
-
-    return menu;
+    return baseTpl;
   }
 }

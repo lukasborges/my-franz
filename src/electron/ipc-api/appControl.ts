@@ -4,7 +4,10 @@ import {
 import {
   APP_DOCK_BOUNCE,
   APP_GET_DISPLAYS,
+  APP_CLOSE_WINDOW,
   APP_GET_LOGIN_ITEM_SETTINGS,
+  APP_MINIMIZE_WINDOW,
+  APP_QUIT,
   APP_SET_LOGIN_ITEM_SETTINGS,
   APP_SHOW_MAIN_WINDOW,
   NATIVE_THEME_UPDATED,
@@ -21,6 +24,16 @@ export default ({ mainWindow }: { mainWindow: BrowserWindow }) => {
   ipcMain.on(APP_SET_LOGIN_ITEM_SETTINGS, (event, settings) => {
     debug('Setting login item settings to', settings);
     app.setLoginItemSettings(settings);
+  });
+
+  ipcMain.on(APP_QUIT, () => app.quit());
+
+  ipcMain.on(APP_MINIMIZE_WINDOW, (event) => {
+    BrowserWindow.fromWebContents(event.sender)?.minimize();
+  });
+
+  ipcMain.on(APP_CLOSE_WINDOW, (event) => {
+    BrowserWindow.fromWebContents(event.sender)?.close();
   });
 
   ipcMain.on(APP_DOCK_BOUNCE, () => {

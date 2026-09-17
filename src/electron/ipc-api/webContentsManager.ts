@@ -13,6 +13,17 @@ const debug = require('debug')('Franz:ipcApi:webContentsManager');
 // the channel cannot be turned into arbitrary main-process access.
 const ALLOWED_METHODS = new Set([
   'canGoBack',
+  'copy',
+  'cut',
+  'delete',
+  'getZoomLevel',
+  'paste',
+  'pasteAndMatchStyle',
+  'redo',
+  'selectAll',
+  'setZoomLevel',
+  'toggleDevTools',
+  'undo',
   'canGoForward',
   'getURL',
   'goBack',

@@ -1,4 +1,3 @@
-// import { app } from '@electron/remote';
 // import ElectronCookies from '@meetfranz/electron-cookies';
 // import querystring from 'querystring';
 

@@ -320,6 +320,7 @@ export default class AppStore extends Store {
         isTodosDrawerOpen: this.stores.todos.isTodosPanelVisible,
         isWorkspaceFeatureEnabled: this.stores.workspaces.isFeatureEnabled,
         isWorkspaceDrawerOpen: this.stores.workspaces.isWorkspaceDrawerOpen,
+        isFullScreen: this.isFullScreen,
       },
     };
   }

@@ -10,6 +10,7 @@ import overlayWindow from './overlayWindow';
 import serviceCache from './serviceCache';
 import sessionManager from './sessionManager';
 import appControl from './appControl';
+import touchBar from './touchBar';
 import menuManager from './menuManager';
 import webContentsManager from './webContentsManager';
 import settings from './settings';
@@ -29,6 +30,7 @@ export default (params) => {
   webContentsManager();
   menuManager();
   appControl(params);
+  touchBar(params);
   browserViewManager(params);
   overlayWindow(params);
   macOSPermissions(params);
