@@ -1,10 +1,3 @@
-import {
-  app,
-  getCurrentWindow,
-  nativeTheme,
-  powerMonitor,
-  screen,
-} from '@electron/remote';
 import { ipcRenderer, shell } from 'electron';
 import { readJsonSync } from 'fs-extra';
 import {
@@ -31,12 +24,21 @@ import { sleep } from '../helpers/async-helpers';
 import { getServiceIdsFromPartitions, removeServicePartitionDirectory } from '../helpers/service-helpers.js';
 import { isValidExternalURL } from '../helpers/url-helpers';
 import {
-  CHECK_MACOS_PERMISSIONS, FETCH_DEBUG_INFO, OVERLAY_SHARE_SETTINGS, RELOAD_APP, WINDOWS_TITLEBAR_FETCH_MENU,
+  APP_DOCK_BOUNCE,
+  APP_GET_DISPLAYS,
+  APP_GET_LOGIN_ITEM_SETTINGS,
+  APP_SET_LOGIN_ITEM_SETTINGS,
+  APP_SHOW_MAIN_WINDOW,
+  CHECK_MACOS_PERMISSIONS,
+  FETCH_DEBUG_INFO,
+  NATIVE_THEME_UPDATED,
+  OVERLAY_SHARE_SETTINGS,
+  POWER_MONITOR_EVENT,
+  RELOAD_APP,
+  WINDOWS_TITLEBAR_FETCH_MENU,
 } from '../ipcChannels';
 
 const debug = require('debug')('Franz:AppStore');
-
-const mainWindow = getCurrentWindow();
 
 const defaultLocale = DEFAULT_APP_SETTINGS.locale;
 
@@ -75,7 +77,9 @@ export default class AppStore extends Store {
 
   @observable isClearingAllCache = false;
 
-  @observable isFullScreen = mainWindow.isFullScreen();
+  @observable isFullScreen = appValues().isFullScreen;
+
+  @observable screens = [];
 
   @observable isFocused = true;
 
@@ -149,7 +153,7 @@ export default class AppStore extends Store {
         this.updateStatus = this.updateStatusTypes.AVAILABLE;
         this.nextAppReleaseVersion = data.version;
         if (isMac) {
-          app.dock.bounce();
+          ipcRenderer.send(APP_DOCK_BOUNCE);
         }
       }
 
@@ -160,7 +164,7 @@ export default class AppStore extends Store {
       if (data.downloaded) {
         this.updateStatus = this.updateStatusTypes.DOWNLOADED;
         if (isMac) {
-          app.dock.bounce();
+          ipcRenderer.send(APP_DOCK_BOUNCE);
         }
       }
 
@@ -198,7 +202,13 @@ export default class AppStore extends Store {
 
     this._healthCheck();
 
-    this.isSystemDarkModeEnabled = nativeTheme.shouldUseDarkColors;
+    this.isSystemDarkModeEnabled = appValues().isDarkMode;
+
+    ipcRenderer.invoke(APP_GET_DISPLAYS).then((screens) => { this.screens = screens; });
+
+    ipcRenderer.on(NATIVE_THEME_UPDATED, (event, shouldUseDarkColors) => {
+      this.isSystemDarkModeEnabled = shouldUseDarkColors;
+    });
 
     ipcRenderer.on('isWindowFocused', (event, isFocused) => {
       debug('Setting is focused to', isFocused);
@@ -217,13 +227,14 @@ export default class AppStore extends Store {
       gaPage(pathname);
     });
 
-    powerMonitor.on('suspend', () => {
-      debug('System suspended starting timer');
+    ipcRenderer.on(POWER_MONITOR_EVENT, (event, type) => {
+      if (type === 'suspend') {
+        debug('System suspended starting timer');
 
-      this.timeSuspensionStart = moment();
-    });
+        this.timeSuspensionStart = moment();
+        return;
+      }
 
-    powerMonitor.on('resume', () => {
       debug('System resumed, last suspended on', this.timeSuspensionStart);
 
       if (this.timeSuspensionStart.add(10, 'm').isBefore(moment())) {
@@ -269,7 +280,7 @@ export default class AppStore extends Store {
       host: {
         platform: process.platform,
         release: os.release(),
-        screens: screen.getAllDisplays(),
+        screens: this.screens,
       },
       franz: {
         version: appValues().version,
@@ -343,11 +354,7 @@ export default class AppStore extends Store {
         this.actions.service.setActive({
           serviceId,
         });
-        mainWindow.show();
-        if (app.mainWindow.isMinimized()) {
-          mainWindow.restore();
-        }
-        mainWindow.focus();
+        ipcRenderer.send(APP_SHOW_MAIN_WINDOW);
 
         debug('Notification click handler');
       }
@@ -397,7 +404,7 @@ export default class AppStore extends Store {
 
       debug('Setting login item settings to', args);
 
-      app.setLoginItemSettings(args);
+      ipcRenderer.send(APP_SET_LOGIN_ITEM_SETTINGS, args);
     } catch (err) {
       console.warn(err);
     }
@@ -591,7 +598,7 @@ export default class AppStore extends Store {
   }
 
   async _checkAutoStart() {
-    const { openAtLogin, executableWillLaunchAtLogin } = app.getLoginItemSettings();
+    const { openAtLogin, executableWillLaunchAtLogin } = await ipcRenderer.invoke(APP_GET_LOGIN_ITEM_SETTINGS);
     debug('Open app at login setting', openAtLogin);
 
     return (isWindows ? executableWillLaunchAtLogin : openAtLogin) || false;

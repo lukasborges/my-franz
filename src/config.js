@@ -7,8 +7,6 @@ import { asarPath } from './helpers/asar-helpers';
 import appValues from './helpers/app-helpers';
 
 const isRenderer = process.type === 'renderer';
-// eslint-disable-next-line global-require
-const { nativeTheme } = isRenderer ? require('@electron/remote') : require('electron');
 
 export const CHECK_INTERVAL = ms('1h'); // How often should we perform checks
 
@@ -29,7 +27,7 @@ export const GA_ID_DEV = 'UA-74126766-12';
 export const GA_ID_PROD = 'UA-74126766-10';
 
 export const DEFAULT_APP_SETTINGS = Object.assign(DEFAULT_APP_SETTINGS_VANILLA, {
-  darkMode: process.platform === 'darwin' ? nativeTheme.shouldUseDarkColors : false, // We can't use refs from `./environment` at this time
+  darkMode: process.platform === 'darwin' ? appValues().isDarkMode : false, // We can't use refs from `./environment` at this time
 });
 
 export const DEFAULT_FEATURES_CONFIG = {

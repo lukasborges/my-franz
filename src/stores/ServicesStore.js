@@ -1,4 +1,3 @@
-import { app } from '@electron/remote';
 import { debounce, remove } from 'lodash';
 import {
   action,

@@ -23,7 +23,7 @@ export default function appValues() {
   }
 
   // eslint-disable-next-line global-require
-  const { app } = require('electron');
+  const { app, nativeTheme } = require('electron');
 
   return {
     version: app.getVersion(),
@@ -34,5 +34,7 @@ export default function appValues() {
     appData: app.getPath('appData'),
     downloads: app.getPath('downloads'),
     localApi: process.env.FRANZ_LOCAL_API || null,
+    isDarkMode: nativeTheme.shouldUseDarkColors,
+    isFullScreen: Boolean(app.mainWindow && app.mainWindow.isFullScreen()),
   };
 }

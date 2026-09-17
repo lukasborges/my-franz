@@ -8,7 +8,6 @@ import classnames from 'classnames';
 
 import { mdiCheckAll } from '@mdi/js';
 import { ipcRenderer } from 'electron';
-import { BrowserWindow } from '@electron/remote';
 import { debounce } from 'lodash';
 import Appear from '../../../components/ui/effects/Appear';
 import UpgradeButton from '../../../components/ui/UpgradeButton';
