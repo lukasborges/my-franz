@@ -58,6 +58,21 @@ export default class FeaturesStore extends Store {
       const requestResult = this.featuresRequest.execute().result;
       Object.assign(features, requestResult);
     }
+    // Self-built: override server-side plan restrictions.
+    Object.assign(features, {
+      isServiceLimitEnabled: false,
+      serviceLimitCount: 0,
+      needToWaitToProceed: false,
+      appDelaysEnabled: false,
+      isTrialStatusBarEnabled: false,
+      isPlanSelectionEnabled: false,
+      isSpellcheckerIncludedInCurrentPlan: true,
+      isServiceProxyIncludedInCurrentPlan: true,
+      isWorkspaceIncludedInCurrentPlan: true,
+      isCommunityRecipesIncludedInCurrentPlan: true,
+      isCustomUrlIncludedInCurrentPlan: true,
+      isTodosIncludedInCurrentPlan: true,
+    });
     runInAction('FeaturesStore::_updateFeatures', () => {
       this.features = features;
     });
