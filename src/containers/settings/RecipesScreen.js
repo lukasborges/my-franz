@@ -87,15 +87,23 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
     const { filter } = this.props.params;
     let recipeFilter;
 
+    const localRecipes = communityRecipesStore.communityRecipes;
+
     if (filter === 'all') {
-      recipeFilter = recipePreviews.all;
+      recipeFilter = [...recipePreviews.all, ...localRecipes];
     } else if (filter === 'dev') {
-      recipeFilter = communityRecipesStore.communityRecipes;
+      recipeFilter = localRecipes;
     } else {
       recipeFilter = recipePreviews.featured;
     }
 
-    const allRecipes = this.state.needle ? recipePreviews.searchResults : recipeFilter;
+    const needle = (this.state.needle || '').toLowerCase();
+    const matchingLocalRecipes = needle
+      ? localRecipes.filter(r => `${r.name} ${r.id}`.toLowerCase().includes(needle))
+      : [];
+    const allRecipes = this.state.needle
+      ? [...matchingLocalRecipes, ...recipePreviews.searchResults]
+      : recipeFilter;
 
     const isLoading = recipePreviews.featuredRecipePreviewsRequest.isExecuting
       || recipePreviews.allRecipePreviewsRequest.isExecuting

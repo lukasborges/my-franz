@@ -107,6 +107,36 @@ class RecipeWebview {
   static clearCache() {
     ipcRenderer.invoke('clearServiceCache');
   }
+
+  // --- Ferdium recipe API compatibility -----------------------------------
+
+  safeParseInt(text) {
+    if (text === undefined || text === null) return 0;
+    const parsed = Number.parseInt(text.toString().replace(/[^\d]/g, ''), 10);
+    return Number.isNaN(parsed) ? 0 : parsed;
+  }
+
+  isImage(link) {
+    if (!link) return false;
+    const { role } = link.dataset || {};
+    if (role !== undefined) return role === 'img';
+    const url = link.getAttribute('href') || '';
+    return /\.(jpg|jpeg|png|webp|avif|gif|svg)($|\?|:)/.test(url.split(/[#?]/)[0]);
+  }
+
+  handleDarkMode(handler) {
+    if (typeof handler === 'function') {
+      this.darkModeHandler = handler;
+    }
+  }
+
+  clearStorageData() {
+    RecipeWebview.clearCache();
+  }
+
+  openNewWindow(url) {
+    window.open(url);
+  }
 }
 
 module.exports = RecipeWebview;
