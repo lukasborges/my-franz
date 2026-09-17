@@ -14,6 +14,7 @@ import { DEFAULT_APP_SETTINGS_VANILLA } from '../configVanilla';
 import { buildMenuTpl } from '../electron/serviceContextMenuTemplate';
 import Settings from '../electron/Settings';
 import { isMac } from '../environment';
+import { darkThemeGrayDarkest } from '../theme/default/legacy';
 import { IPC } from '../features/todos/constants';
 import { getRecipeDirectory, getDevRecipeDirectory, loadRecipeConfig } from '../helpers/recipe-helpers';
 import { isValidExternalURL } from '../helpers/url-helpers';
@@ -161,7 +162,7 @@ export class ServiceBrowserView {
       // ResizeObserver and makes the view drift after maximize/restore, which
       // exposes the draggable title bar underneath (dead clicks, double-click maximizes).
       this.view.setBounds(this.bounds);
-      this.view.setBackgroundColor('white');
+      this.view.setBackgroundColor(this.backgroundColor);
 
       this.isAttached = true;
     }
@@ -328,6 +329,10 @@ export class ServiceBrowserView {
       ...state,
     };
 
+    if (this.view) {
+      this.view.setBackgroundColor(this.backgroundColor);
+    }
+
     const { isSpellcheckerEnabled, spellcheckerLanguage } = this.state;
 
     this.webContents.session.setSpellCheckerEnabled(this.state.isSpellcheckerEnabled);
@@ -445,6 +450,10 @@ export class ServiceBrowserView {
     this.bounds = newBounds;
   }
 
+  get backgroundColor() {
+    return this.state.isDarkModeEnabled ? darkThemeGrayDarkest : 'white';
+  }
+
   reapplyBounds() {
     if (this.isAttached && this.bounds) {
       this.view.setBounds(this.bounds);
@@ -514,7 +523,6 @@ export class ServiceBrowserView {
   }
 
   hacks() {
-    this.webContents.insertCSS('html { background: white; } ');
     if (isMac) {
       this.webContents.insertCSS(`
         body:before {
