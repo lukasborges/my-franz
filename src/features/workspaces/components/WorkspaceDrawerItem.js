@@ -1,10 +1,10 @@
-import { Menu, getCurrentWindow } from '@electron/remote';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import injectSheet from 'react-jss';
 import classnames from 'classnames';
 import { defineMessages, intlShape } from 'react-intl';
+import { popupMenu } from '../../../helpers/menu-helpers';
 import { ctrlKey } from '../../../environment';
 
 const messages = defineMessages({
@@ -101,8 +101,6 @@ class WorkspaceDrawerItem extends Component {
       click: onContextMenuEditClick,
     }];
 
-    const contextMenu = Menu.buildFromTemplate(contextMenuTemplate);
-
     return (
       <div
         className={classnames([
@@ -111,7 +109,7 @@ class WorkspaceDrawerItem extends Component {
         ])}
         onClick={onClick}
         onContextMenu={() => (
-          onContextMenuEditClick && contextMenu.popup(getCurrentWindow())
+          onContextMenuEditClick && popupMenu(contextMenuTemplate)
         )}
         data-tip={`${shortcutIndex <= 9 ? `(${ctrlKey}+Alt+${shortcutIndex})` : ''}`}
       >

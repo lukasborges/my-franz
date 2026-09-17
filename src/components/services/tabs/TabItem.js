@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { Menu, getCurrentWindow } from '@electron/remote';
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -9,6 +8,7 @@ import classnames from 'classnames';
 import { SortableElement } from 'react-sortable-hoc';
 
 import { observable } from 'mobx';
+import { popupMenu } from '../../../helpers/menu-helpers';
 import ServiceModel from '../../../models/Service';
 import { isDevMode, ctrlKey, cmdKey } from '../../../environment';
 
@@ -132,8 +132,6 @@ const messages = defineMessages({
         click: () => deleteService(),
       });
     }
-    const menu = Menu.buildFromTemplate(menuTemplate);
-
     let notificationBadge = null;
     if ((showMessageBadgeWhenMutedSetting || service.isNotificationEnabled) && showMessageBadgesEvenWhenMuted && service.isBadgeEnabled) {
       notificationBadge = (
@@ -163,7 +161,7 @@ const messages = defineMessages({
           'is-disabled': !service.isEnabled,
         })}
         onClick={clickHandler}
-        onContextMenu={() => menu.popup(getCurrentWindow())}
+        onContextMenu={() => popupMenu(menuTemplate)}
         data-tip={`${service.name} ${shortcutIndex <= 9 ? `(${ctrlKey}+${shortcutIndex})` : ''}`}
         data-for="tabs"
       >

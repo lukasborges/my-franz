@@ -1,7 +1,7 @@
-import { dialog, getCurrentWindow } from '@electron/remote';
 import { ipcRenderer } from 'electron';
 import { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
+import { showMessageBox } from '../../../helpers/menu-helpers';
 
 import { ACTIONS, GA_CATEGORY_PLAN_SELECTION } from '..';
 import ErrorBoundary from '../../../components/util/ErrorBoundary';
@@ -85,10 +85,10 @@ class PlanSelectionScreen extends Component {
               this.triggerAction(ACTIONS.ACTIVATE_TRIAL, { planId });
             }
           }}
-          stayOnFree={() => {
+          stayOnFree={async () => {
             gaPage('/select-plan/downgrade');
 
-            const selection = dialog.showMessageBoxSync(getCurrentWindow(), {
+            const selection = await showMessageBox({
               type: 'question',
               message: intl.formatMessage(messages.dialogTitle),
               detail: intl.formatMessage(messages.dialogMessage, {

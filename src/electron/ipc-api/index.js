@@ -9,6 +9,7 @@ import macOSPermissions from './macOSPermissions';
 import overlayWindow from './overlayWindow';
 import serviceCache from './serviceCache';
 import sessionManager from './sessionManager';
+import menuManager from './menuManager';
 import webContentsManager from './webContentsManager';
 import settings from './settings';
 import subscriptionWindow from './subscriptionWindow';
@@ -25,6 +26,7 @@ export default (params) => {
   serviceCache();
   sessionManager();
   webContentsManager();
+  menuManager();
   browserViewManager(params);
   overlayWindow(params);
   macOSPermissions(params);

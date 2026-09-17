@@ -55,6 +55,10 @@ export const TOGGLE_FULL_SCREEN = 'TOGGLE_FULL_SCREEN';
 export const CHECK_MACOS_PERMISSIONS = 'CHECK_MACOS_PERMISSIONS';
 export const RELOAD_APP = 'RELOAD_APP';
 
+// Menus and dialogs
+export const MENU_POPUP = 'MENU_POPUP';
+export const DIALOG_MESSAGE_BOX = 'DIALOG_MESSAGE_BOX';
+
 // webContents
 export const WEB_CONTENTS_INVOKE = 'WEB_CONTENTS_INVOKE';
 export const WEB_CONTENTS_SEND = 'WEB_CONTENTS_SEND';
