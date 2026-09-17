@@ -3,7 +3,7 @@ import path from 'path';
 import tar from 'tar';
 import fs from 'fs-extra';
 
-import { app, require as remoteRequire } from '@electron/remote';
+import appValues from '../../helpers/app-helpers';
 
 import ServiceModel from '../../models/Service';
 import RecipePreviewModel from '../../models/RecipePreview';
@@ -34,8 +34,6 @@ module.paths.unshift(
   getDevRecipeDirectory(),
   getRecipeDirectory(),
 );
-
-const { default: fetch } = remoteRequire('electron-fetch');
 
 const SERVER_URL = API;
 const API_VERSION = 'v1';
@@ -368,15 +366,15 @@ export default class ServerApi {
 
   async getRecipePackage(recipeId) {
     try {
-      const recipesDirectory = path.join(app.getPath('userData'), 'recipes');
+      const recipesDirectory = path.join(appValues().userData, 'recipes');
       const recipeTempDirectory = fs.mkdtempSync(path.join(os.tmpdir(), `franz-recipe-${recipeId}-`));
       const archivePath = path.join(recipeTempDirectory, 'recipe.tar.gz');
       const packageUrl = `${API_URL}/recipes/download/${recipeId}`;
 
       fs.ensureDirSync(recipeTempDirectory);
-      const res = await fetch(packageUrl);
+      const res = await window.fetch(packageUrl);
       debug('Recipe downloaded', recipeId);
-      const buffer = await res.buffer();
+      const buffer = Buffer.from(await res.arrayBuffer());
       fs.writeFileSync(archivePath, buffer);
 
       await sleep(10);
@@ -439,7 +437,7 @@ export default class ServerApi {
 
   // News
   async getLatestNews() {
-    const url = `${API_URL}/news?platform=${os.platform()}&arch=${os.arch()}&version=${app.getVersion()}`;
+    const url = `${API_URL}/news?platform=${os.platform()}&arch=${os.arch()}&version=${appValues().version}`;
     const request = await sendAuthRequest(url);
     if (!request.ok) throw request;
     const data = await request.json();
@@ -466,7 +464,7 @@ export default class ServerApi {
   }
 
   async getLegacyServices() {
-    const file = path.join(app.getPath('userData'), 'settings', 'services.json');
+    const file = path.join(appValues().userData, 'settings', 'services.json');
 
     try {
       const config = fs.readJsonSync(file);

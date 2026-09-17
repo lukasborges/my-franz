@@ -55,5 +55,8 @@ export const TOGGLE_FULL_SCREEN = 'TOGGLE_FULL_SCREEN';
 export const CHECK_MACOS_PERMISSIONS = 'CHECK_MACOS_PERMISSIONS';
 export const RELOAD_APP = 'RELOAD_APP';
 
+// App
+export const APP_VALUES = 'APP_VALUES';
+
 // Relay
 export const RELAY_MESSAGE = 'RELAY_MESSAGE';

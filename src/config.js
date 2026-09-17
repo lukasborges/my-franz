@@ -4,7 +4,11 @@ import path from 'path';
 import { DEFAULT_APP_SETTINGS_VANILLA } from './configVanilla';
 import { asarPath } from './helpers/asar-helpers';
 
-const { app, nativeTheme } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
+import appValues from './helpers/app-helpers';
+
+const isRenderer = process.type === 'renderer';
+// eslint-disable-next-line global-require
+const { nativeTheme } = isRenderer ? require('@electron/remote') : require('electron');
 
 export const CHECK_INTERVAL = ms('1h'); // How often should we perform checks
 
@@ -60,16 +64,22 @@ export const FILE_SYSTEM_SETTINGS_TYPES = [
   'proxy',
 ];
 
-// Set app directory before loading user modules
-if (process.env.FRANZ_APPDATA_DIR != null) {
-  app.setPath('appData', process.env.FRANZ_APPDATA_DIR);
-  app.setPath('userData', path.join(app.getPath('appData')));
-} else if (process.platform === 'win32') {
-  app.setPath('appData', process.env.APPDATA);
-  app.setPath('userData', path.join(app.getPath('appData'), app.getName()));
+// Set app directory before loading user modules. Only the main process owns
+// these paths; the renderer reads whatever main resolved them to.
+if (!isRenderer) {
+  // eslint-disable-next-line global-require
+  const { app } = require('electron');
+
+  if (process.env.FRANZ_APPDATA_DIR != null) {
+    app.setPath('appData', process.env.FRANZ_APPDATA_DIR);
+    app.setPath('userData', path.join(app.getPath('appData')));
+  } else if (process.platform === 'win32') {
+    app.setPath('appData', process.env.APPDATA);
+    app.setPath('userData', path.join(app.getPath('appData'), app.getName()));
+  }
 }
 
-export const SETTINGS_PATH = path.join(app.getPath('userData'), 'config');
+export const SETTINGS_PATH = path.join(appValues().userData, 'config');
 
 // Replacing app.asar is not beautiful but unforunately necessary
 export const DICTIONARY_PATH = asarPath(path.join(__dirname, 'dictionaries'));

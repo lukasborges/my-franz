@@ -45,6 +45,8 @@ app.commandLine.appendSwitch('disable-features', 'CrossOriginOpenerPolicy');
 app.commandLine.appendSwitch('disable-site-isolation-trials');
 
 import Settings from './electron/Settings';
+import appValues from './helpers/app-helpers';
+import { APP_VALUES } from './ipcChannels';
 import LocalServer from './electron/localServer';
 import handleDeepLink from './electron/deepLinking';
 import './electron/exception';
@@ -350,6 +352,10 @@ if (argv['auth-negotiate-delegate-whitelist']) {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
+ipcMain.on(APP_VALUES, (event) => {
+  event.returnValue = appValues();
+});
+
 app.on('ready', async () => {
   // force app to live in /Applications
   enforceMacOSAppLocation();

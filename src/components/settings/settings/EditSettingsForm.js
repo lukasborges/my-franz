@@ -1,8 +1,8 @@
-import { app } from '@electron/remote';
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import { defineMessages, intlShape } from 'react-intl';
+import appValues from '../../../helpers/app-helpers';
 
 import Form from '../../../lib/Form';
 import Button from '../../ui/Button';
@@ -249,7 +249,7 @@ export default @observer class EditSettingsForm extends Component {
             <Toggle field={form.$('beta')} />
             {intl.formatMessage(messages.currentVersion)}
             {' '}
-            {app.getVersion()}
+            {appValues().version}
             <p className="settings__message">
               <span className="mdi mdi-information" />
               {intl.formatMessage(messages.languageDisclaimer)}

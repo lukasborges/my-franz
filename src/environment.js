@@ -9,9 +9,9 @@ import {
   LOCAL_API_WEBSITE,
 } from './config';
 
-const { app } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
+import appValues from './helpers/app-helpers';
 
-export const isDevMode = !app.isPackaged;
+export const isDevMode = !appValues().isPackaged;
 export const useLiveAPI = process.env.LIVE_API;
 export const useLocalAPI = process.env.LOCAL_API;
 
@@ -42,8 +42,7 @@ if (!isDevMode || (isDevMode && useLiveAPI)) {
 
 // Self-built: every API call goes to the embedded local server started by the
 // main process (src/electron/localServer.js). The URL is handed over via env.
-const localServerUrl = process.env.FRANZ_LOCAL_API
-  || (process.type === 'renderer' ? require('@electron/remote').process.env.FRANZ_LOCAL_API : null); // eslint-disable-line global-require
+const localServerUrl = appValues().localApi;
 
 export const API = localServerUrl || api;
 export const API_VERSION = 'v1';

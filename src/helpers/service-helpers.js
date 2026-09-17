@@ -1,9 +1,9 @@
 import path from 'path';
-import { app } from '@electron/remote';
 import fs from 'fs-extra';
+import appValues from './app-helpers';
 
 export function getServicePartitionsDirectory() {
-  return path.join(app.getPath('userData'), 'Partitions');
+  return path.join(appValues().userData, 'Partitions');
 }
 
 export function removeServicePartitionDirectory(id = '', addServicePrefix = false) {

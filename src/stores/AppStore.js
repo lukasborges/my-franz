@@ -16,6 +16,7 @@ import os from 'os';
 import path from 'path';
 import prettyBytes from 'pretty-bytes';
 import { URL } from 'url';
+import appValues from '../helpers/app-helpers';
 
 import { CHECK_INTERVAL, DEFAULT_APP_SETTINGS } from '../config';
 import { isMac, isWindows } from '../environment';
@@ -271,7 +272,7 @@ export default class AppStore extends Store {
         screens: screen.getAllDisplays(),
       },
       franz: {
-        version: app.getVersion(),
+        version: appValues().version,
         electron: process.versions.electron,
         installedRecipes: this.stores.recipes.all.map(recipe => ({
           id: recipe.id,
@@ -289,7 +290,7 @@ export default class AppStore extends Store {
           id: workspace.id,
           services: workspace.services,
         })),
-        windowSettings: readJsonSync(path.join(app.getPath('userData'), 'window-state.json')),
+        windowSettings: readJsonSync(path.join(appValues().userData, 'window-state.json')),
         user: this.stores.user.data.id,
       },
     };
@@ -509,7 +510,7 @@ export default class AppStore extends Store {
 
   _getDefaultLocale() {
     return getLocale({
-      locale: app.getLocale(),
+      locale: appValues().locale,
       locales,
       defaultLocale,
       fallbackLocale: DEFAULT_APP_SETTINGS.fallbackLocale,

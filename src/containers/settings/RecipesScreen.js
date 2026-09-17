@@ -1,10 +1,10 @@
 import { shell } from 'electron';
-import { app } from '@electron/remote';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { autorun } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import path from 'path';
+import appValues from '../../helpers/app-helpers';
 
 import RecipePreviewsStore from '../../stores/RecipePreviewsStore';
 import RecipeStore from '../../stores/RecipesStore';
@@ -110,7 +110,7 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
       || recipes.installRecipeRequest.isExecuting
       || recipePreviews.searchRecipePreviewsRequest.isExecuting;
 
-    const recipeDirectory = path.join(app.getPath('userData'), 'recipes', 'dev');
+    const recipeDirectory = path.join(appValues().userData, 'recipes', 'dev');
 
     return (
       <ErrorBoundary>

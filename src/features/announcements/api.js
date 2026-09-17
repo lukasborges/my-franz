@@ -1,4 +1,4 @@
-import { app } from '@electron/remote';
+import appValues from '../../helpers/app-helpers';
 import Request from '../../stores/lib/Request';
 import { API, API_VERSION } from '../../environment';
 
@@ -7,7 +7,7 @@ const debug = require('debug')('Franz:feature:announcements:api');
 export const announcementsApi = {
   async getCurrentVersion() {
     debug('getting current version of electron app');
-    return Promise.resolve(app.getVersion());
+    return Promise.resolve(appValues().version);
   },
 
   async getChangelog(version) {

@@ -1,13 +1,13 @@
 import path from 'path';
 
-const { app } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
+import appValues from './app-helpers';
 
 export function getRecipeDirectory(id = '') {
-  return path.join(app.getPath('userData'), 'recipes', id);
+  return path.join(appValues().userData, 'recipes', id);
 }
 
 export function getDevRecipeDirectory(id = '') {
-  return path.join(app.getPath('userData'), 'recipes', 'dev', id);
+  return path.join(appValues().userData, 'recipes', 'dev', id);
 }
 
 export function loadRecipeConfig(recipeId) {
