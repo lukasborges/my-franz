@@ -202,7 +202,6 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: true,
       webviewTag: true,
-      enableRemoteModule: true,
       contextIsolation: false,
     },
   });
@@ -325,14 +324,6 @@ const createWindow = () => {
   app.mainWindow = mainWindow;
   app.isMaximized = mainWindow.isMaximized();
 
-  mainWindow.webContents.on('new-window', (e, url) => {
-    debug('Open url', url);
-    e.preventDefault();
-
-    if (isValidExternalURL(url)) {
-      shell.openExternal(url);
-    }
-  });
 };
 
 // Allow passing command line parameters/switches to electron

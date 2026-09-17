@@ -21,7 +21,6 @@ export default async ({ mainWindow }) => {
         webPreferences: {
           nodeIntegration: true,
           webviewTag: true,
-          enableRemoteModule: true,
           contextIsolation: false,
         },
       });
