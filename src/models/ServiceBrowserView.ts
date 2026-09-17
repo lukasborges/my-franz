@@ -1,11 +1,11 @@
 import {
-  BrowserView,
   BrowserWindow,
   BrowserWindowConstructorOptions,
   ipcMain,
   Menu,
   Rectangle,
   shell,
+  WebContentsView,
 } from 'electron';
 import fs from 'fs-extra';
 import ms from 'ms';
@@ -73,7 +73,7 @@ export class ServiceBrowserView {
 
   recipe: any;
 
-  view: BrowserView = null;
+  view: WebContentsView = null;
 
   window: BrowserWindow;
 
@@ -111,7 +111,7 @@ export class ServiceBrowserView {
     this.recipe = new Recipe(loadRecipeConfig(this.recipeId));
 
     if (!state.isRestricted) {
-      this.view = new BrowserView({
+      this.view = new WebContentsView({
         webPreferences: {
           partition: config.partition,
           preload: recipeId !== TODOS_RECIPE_ID ? `${__dirname}/../webview/recipe.js` : `${__dirname}/../features/todos/preload.js`,
@@ -156,7 +156,7 @@ export class ServiceBrowserView {
         };
       }
 
-      this.window.addBrowserView(this.view);
+      this.window.contentView.addChildView(this.view);
       // No setAutoResize: it fights the explicit bounds sent by the renderer's
       // ResizeObserver and makes the view drift after maximize/restore, which
       // exposes the draggable title bar underneath (dead clicks, double-click maximizes).
@@ -339,7 +339,7 @@ export class ServiceBrowserView {
 
   remove() {
     if (this.isAttached) {
-      this.window.removeBrowserView(this.view);
+      this.window.contentView.removeChildView(this.view);
     }
 
     this.isAttached = false;
@@ -366,7 +366,8 @@ export class ServiceBrowserView {
       }
 
       debug('Set browserView active', this.config.name);
-      this.window.setTopBrowserView(this.view);
+      // Re-adding an existing child view raises it to the top of the stack.
+      this.window.contentView.addChildView(this.view);
       this.webContents.focus();
     }
   }
