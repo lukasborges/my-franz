@@ -30,7 +30,7 @@ import { sleep } from '../helpers/async-helpers';
 import { getServiceIdsFromPartitions, removeServicePartitionDirectory } from '../helpers/service-helpers.js';
 import { isValidExternalURL } from '../helpers/url-helpers';
 import {
-  CHECK_MACOS_PERMISSIONS, FETCH_DEBUG_INFO, OVERLAY_SHARE_SETTINGS, RELOAD_APP, WINDOWS_TITLEBAR_FETCH_MENU
+  CHECK_MACOS_PERMISSIONS, FETCH_DEBUG_INFO, OVERLAY_SHARE_SETTINGS, RELOAD_APP, WINDOWS_TITLEBAR_FETCH_MENU,
 } from '../ipcChannels';
 
 const debug = require('debug')('Franz:AppStore');
@@ -417,11 +417,7 @@ export default class AppStore extends Store {
 
   @action _checkForUpdates() {
     if (this.isOnline) {
-      this.updateStatus = this.updateStatusTypes.CHECKING;
-      ipcRenderer.send('autoUpdate', {
-        action: 'check',
-      });
-
+      // Self-built: app auto-update is disabled, only recipes are checked (locally)
       this.actions.recipe.update();
     }
   }

@@ -137,6 +137,28 @@ class RecipeWebview {
   openNewWindow(url) {
     window.open(url);
   }
+
+  injectJSUnsafe() {}
+
+  setDialogTitle() {}
+
+  releaseServiceWorkers() {
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
+    }
+  }
+
+  setAvatarImage(url) {
+    this.setServiceIcon(url);
+  }
+
+  safePerseInt(text) {
+    return this.safeParseInt(text);
+  }
+
+  get ipcRenderer() {
+    return ipcRenderer;
+  }
 }
 
 module.exports = RecipeWebview;

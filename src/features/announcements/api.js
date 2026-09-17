@@ -11,12 +11,8 @@ export const announcementsApi = {
   },
 
   async getChangelog(version) {
-    debug('fetching release changelog from Github');
-    const url = `https://api.github.com/repos/meetfranz/franz/releases/tags/v${version}`;
-    const request = await window.fetch(url, { method: 'GET' });
-    if (!request.ok) return null;
-    const data = await request.json();
-    return data.body;
+    debug('changelog lookup disabled in self-built mode', version);
+    return null;
   },
 
   async getAnnouncement(version) {

@@ -85,6 +85,8 @@ export default class UserStore extends Store {
 
   fetchUserInfoInterval = null;
 
+  isAutoLoginRunning = false;
+
   constructor(...args) {
     super(...args);
 
@@ -355,9 +357,13 @@ export default class UserStore extends Store {
           this._tokenLogin(token);
         }, 1000);
       }
-    } else if (!this.isLoggedIn
-      && !currentRoute.includes(this.BASE_ROUTE)) {
-      router.push(this.WELCOME_ROUTE);
+    } else if (!this.isLoggedIn) {
+      // Self-built: no Franz account needed, sign in to the embedded local server
+      if (!this.isAutoLoginRunning) {
+        this.isAutoLoginRunning = true;
+        this._login({ email: 'franz@localhost', password: 'local' })
+          .finally(() => { this.isAutoLoginRunning = false; });
+      }
     } else if (this.isLoggedIn
       && currentRoute === this.LOGOUT_ROUTE) {
       this.actions.user.logout();

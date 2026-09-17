@@ -1,0 +1,3757 @@
+[
+  {
+    "featured": false,
+    "id": "1password",
+    "name": "1Password",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/1password/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "80lv",
+    "name": "80LV",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/80lv/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "affine",
+    "name": "Affine",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/affine/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "air-droid",
+    "name": "AirDroid",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/air-droid/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "airmessage",
+    "name": "AirMessage",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/airmessage/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "airtable",
+    "name": "Airtable",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/airtable/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "alibaba-chat",
+    "name": "Alibaba Chat",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/alibaba-chat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "amazon-web-services",
+    "name": "Amazon Web Services",
+    "version": "1.3.1",
+    "aliases": [
+      "aws"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/amazon-web-services/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "amazon-work-mail",
+    "name": "Amazon WorkMail",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/amazon-work-mail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "android-messages",
+    "name": "Android Messages",
+    "version": "2.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/android-messages/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "anonaddy",
+    "name": "addy.io",
+    "version": "1.3.3",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/anonaddy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "anydo",
+    "name": "Any.do",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/anydo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "asana",
+    "name": "Asana",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/asana/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "awork",
+    "name": "Awork",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/awork/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "azure-devops",
+    "name": "Azure DevOps",
+    "version": "1.4.1",
+    "aliases": [
+      "azdo"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/azure-devops/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "azure-portal",
+    "name": "Azure Portal",
+    "version": "1.0.0",
+    "aliases": [
+      "azpo"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/azure-portal/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "badoo",
+    "name": "Badoo",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/badoo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bale",
+    "name": "Bale",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bale/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bard",
+    "name": "Bard",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bard/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "basecamp",
+    "name": "Basecamp",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/basecamp/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bigbluebutton",
+    "name": "BigBlueButton",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bigbluebutton/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "binance",
+    "name": "Binance",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/binance/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bip",
+    "name": "BiP",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bip/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bitbucket",
+    "name": "BitBucket",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bitbucket/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bitwarden",
+    "name": "Bitwarden",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bitwarden/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "blinkist",
+    "name": "Blinkist",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/blinkist/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "BlueBubbles",
+    "name": "BlueBubbles",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/BlueBubbles/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bluesky",
+    "name": "Bluesky",
+    "version": "1.1.4",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bluesky/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "box",
+    "name": "Box",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/box/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "brax.me",
+    "name": "Brax.Me",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/brax.me/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bring",
+    "name": "Bring!",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bring/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "buffer",
+    "name": "Buffer",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/buffer/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bugzilla",
+    "name": "Bugzilla",
+    "version": "1.1.1",
+    "aliases": [],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bugzilla/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "bycs-messenger",
+    "name": "Bycs-Messenger",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/bycs-messenger/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "campuswire",
+    "name": "Campuswire",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/campuswire/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "canva",
+    "name": "Canva",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/canva/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "canvas",
+    "name": "Canvas",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/canvas/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "cara",
+    "name": "Cara",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/cara/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/chatgpt/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "chatllm",
+    "name": "ChatLLM",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/chatllm/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "chatra",
+    "name": "Chatra",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/chatra/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "chatwithgpt",
+    "name": "Chat with GPT",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/chatwithgpt/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "chatwoot",
+    "name": "Chatwoot",
+    "version": "1.2.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/chatwoot/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "chatwork",
+    "name": "Chatwork",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/chatwork/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "cinny",
+    "name": "Cinny",
+    "version": "1.1.1",
+    "aliases": [
+      "Matrix"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/cinny/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "circuit",
+    "name": "Circuit",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/circuit/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "ciscospark",
+    "name": "Cisco Spark",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/ciscospark/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "citrix-workspace",
+    "name": "Citrix Workspace",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/citrix-workspace/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "claude-ai",
+    "name": "claude.ai",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/claude-ai/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "clickup",
+    "name": "ClickUp",
+    "version": "2.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/clickup/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "cliq",
+    "name": "Cliq",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/cliq/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "clockify",
+    "name": "Clockify",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/clockify/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "clockwise",
+    "name": "Clockwise",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/clockwise/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "clubhouse",
+    "name": "Clubhouse",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/clubhouse/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "coinbase",
+    "name": "Coinbase",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/coinbase/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "conceptboard",
+    "name": "Conceptboard",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/conceptboard/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "confluence",
+    "name": "Confluence",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/confluence/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "crowdin",
+    "name": "Crowdin",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/crowdin/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "daily-dev",
+    "name": "Daily.dev",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/daily-dev/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "deckblue",
+    "name": "DeckBlue",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/deckblue/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "deepai",
+    "name": "DeepAI",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/deepai/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "deepl",
+    "name": "DeepL",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/deepl/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/deepseek/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "dev-community",
+    "name": "Dev Community",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/dev-community/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "devdocs",
+    "name": "DevDocs",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/devdocs/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "devRant",
+    "name": "devRant",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/devRant/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "diagrams",
+    "name": "Diagrams",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/diagrams/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "dialpad",
+    "name": "Dialpad",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/dialpad/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "dict-cc",
+    "name": "Dict.cc",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/dict-cc/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "dingtalk",
+    "name": "Dingtalk",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/dingtalk/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "discord",
+    "name": "Discord",
+    "version": "1.8.5",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/discord/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "discourse",
+    "name": "Discourse",
+    "version": "1.1.1",
+    "aliases": [],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/discourse/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "disqus",
+    "name": "Disqus",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/disqus/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "dockerhub",
+    "name": "Docker Hub",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/dockerhub/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "drawio",
+    "name": "Draw.io",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/drawio/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "dropbox",
+    "name": "Dropbox",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/dropbox/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "duckduckgo-ai-chat",
+    "name": "DuckDuckGo AI Chat",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/duckduckgo-ai-chat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "easy-redmine",
+    "name": "Easy Redmine",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/easy-redmine/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "eitaa",
+    "name": "Eitaa",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/eitaa/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "element",
+    "name": "Element",
+    "version": "1.4.1",
+    "aliases": [
+      "Riot.im",
+      "Matrix"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/element/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "elevate",
+    "name": "Elevate",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/elevate/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "elk",
+    "name": "Elk",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/elk/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "epicgames",
+    "name": "Epic Games Store",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/epicgames/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "erepublik",
+    "name": "eRepublik",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/erepublik/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "evernote",
+    "name": "Evernote",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/evernote/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "excalidraw",
+    "name": "Excalidraw",
+    "version": "1.0.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/excalidraw/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "exploit-db",
+    "name": "Exploit DB",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/exploit-db/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "facebook",
+    "name": "Facebook",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/facebook/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "facebookpages",
+    "name": "Facebook Pages",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/facebookpages/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "fandom",
+    "name": "Fandom",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/fandom/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "fastmail",
+    "name": "FastMail",
+    "version": "2.4.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/fastmail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "feedbin",
+    "name": "Feedbin",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/feedbin/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "feedly",
+    "name": "Feedly",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/feedly/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "figma",
+    "name": "Figma",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/figma/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "firefly",
+    "name": "Firefly",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/firefly/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "fiverr",
+    "name": "Fiverr",
+    "version": "1.1.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/fiverr/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "fleep",
+    "name": "Fleep",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/fleep/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "flipboard",
+    "name": "Flipboard",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/flipboard/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "flock",
+    "name": "Flock",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/flock/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "flowdock",
+    "name": "Flowdock",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/flowdock/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "fluxer-gg",
+    "name": "Fluxer",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/fluxer-gg/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "follow-is",
+    "name": "Follow",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/follow-is/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "franz-custom-website",
+    "name": "Custom Website",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/franz-custom-website/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "freshdesk",
+    "name": "Freshdesk",
+    "version": "1.2.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/freshdesk/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "freshrss",
+    "name": "FreshRSS",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/freshrss/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "freshservice",
+    "name": "Freshservice",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/freshservice/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "furaffinity",
+    "name": "Furaffinity",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/furaffinity/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "gadugadu",
+    "name": "Gadu-Gadu",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gadugadu/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "gaming-on-linux",
+    "name": "GamingOnLinux",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gaming-on-linux/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "gather",
+    "name": "Gather",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gather/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "gettr",
+    "name": "Gettr",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gettr/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "gitea",
+    "name": "Gitea",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gitea/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "github",
+    "name": "GitHub",
+    "version": "2.6.5",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/github/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "gitlab",
+    "name": "GitLab",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gitlab/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "gitter",
+    "name": "Gitter",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gitter/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "glowing-bear",
+    "name": "Glowing Bear",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/glowing-bear/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "gmail",
+    "name": "Gmail",
+    "version": "1.6.3",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gmail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "good-reads",
+    "name": "Good Reads",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/good-reads/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "google-calendar",
+    "name": "Google Calendar",
+    "version": "2.4.5",
+    "aliases": [
+      "google-calendar",
+      "gCalendar"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-calendar/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-classroom",
+    "name": "Google Classroom",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-classroom/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-contacts",
+    "name": "Google Contacts",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-contacts/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-docs",
+    "name": "Google Docs",
+    "version": "2.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-docs/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-drive",
+    "name": "Google Drive",
+    "version": "2.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-drive/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-duo",
+    "name": "Google Duo",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-duo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-gemini",
+    "name": "Google Gemini",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-gemini/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-groups",
+    "name": "Google Groups",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-groups/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-keep",
+    "name": "Google Keep",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-keep/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-maps",
+    "name": "Google Maps",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-maps/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-meet",
+    "name": "Google Meet",
+    "version": "2.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-meet/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-news",
+    "name": "Google News",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-news/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-podcasts",
+    "name": "Google Podcasts",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-podcasts/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-presentation",
+    "name": "Google Presentation",
+    "version": "2.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-presentation/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-spreadsheets",
+    "name": "Google Spreadsheets",
+    "version": "2.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-spreadsheets/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-translate",
+    "name": "Google Translate",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-translate/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "google-voice",
+    "name": "Google Voice",
+    "version": "0.6.7",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/google-voice/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "gotify",
+    "name": "Gotify",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gotify/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "goto",
+    "name": "GoTo",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/goto/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "gotomeeting",
+    "name": "Go To Meeting",
+    "version": "0.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/gotomeeting/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "grammarly",
+    "name": "Grammarly",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/grammarly/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "grok",
+    "name": "Grok",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/grok/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "groupme",
+    "name": "GroupMe",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/groupme/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "guilded",
+    "name": "Guilded",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/guilded/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "guru",
+    "name": "guru.com",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/guru/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "habitica",
+    "name": "Habitica",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/habitica/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "hacker-news",
+    "name": "Hacker News",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hacker-news/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "hackmd",
+    "name": "HackMd",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hackmd/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "hangouts",
+    "name": "Google Chat",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hangouts/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "hangoutschat",
+    "name": "Hangouts Chat",
+    "version": "1.8.3",
+    "aliases": [
+      "google-chat",
+      "gChat"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hangoutschat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "harvest",
+    "name": "Harvest",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/harvest/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "hastebin",
+    "name": "Hastebin",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hastebin/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "help-scout",
+    "name": "Help Scout",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/help-scout/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "hey",
+    "name": "Hey",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hey/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "home-assistant",
+    "name": "Home Assistant",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/home-assistant/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "hostnet",
+    "name": "Hostnet",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hostnet/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "hubstaff",
+    "name": "HubStaff",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hubstaff/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "hugging-chat",
+    "name": "Hugging Chat",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/hugging-chat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "iberbox",
+    "name": "IberBox",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/iberbox/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "iCloud",
+    "name": "iCloud",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/iCloud/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "icloud-mail",
+    "name": "iCloud Mail",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/icloud-mail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "icloud-reminders",
+    "name": "iCloud Reminders",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/icloud-reminders/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "icq",
+    "name": "ICQ",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/icq/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "idobata",
+    "name": "Idobata",
+    "version": "0.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/idobata/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "infomaniak-calendar",
+    "name": "Infomaniak Calendar",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/infomaniak-calendar/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "infomaniak-kdrive",
+    "name": "Infomaniak KDrive",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/infomaniak-kdrive/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "infomaniak-mail",
+    "name": "Infomaniak Mail",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/infomaniak-mail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "inoreader",
+    "name": "Inoreader",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/inoreader/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "instagram",
+    "name": "Instagram",
+    "version": "2.5.4",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/instagram/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "instagram-direct-messages",
+    "name": "Instagram Direct Messages",
+    "version": "1.1.3",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/instagram-direct-messages/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "intercom",
+    "name": "Intercom",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/intercom/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "invoice-ninja",
+    "name": "Invoice Ninja",
+    "version": "1.1.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/invoice-ninja/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "irccloud",
+    "name": "IRCCloud",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/irccloud/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "iris-messenger",
+    "name": "Iris Messenger",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/iris-messenger/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "it-tools",
+    "name": "IT-Tools",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/it-tools/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "jira",
+    "name": "Jira",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/jira/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "jitsi",
+    "name": "Jitsi Meet",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/jitsi/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "jollor",
+    "name": "jollor",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/jollor/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "jsoncrack",
+    "name": "JSON Crack",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/jsoncrack/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "kaizala",
+    "name": "Microsoft Kaizala",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/kaizala/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "keepervault",
+    "name": "Keeper Vault",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/keepervault/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "keybase.io",
+    "name": "Keybase",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/keybase.io/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "kimaicloud",
+    "name": "Kimai Cloud",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/kimaicloud/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "kiwiirc",
+    "name": "KiwiIRC",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/kiwiirc/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "ko-fi",
+    "name": "Ko-fi",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/ko-fi/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "lark",
+    "name": "Lark",
+    "version": "0.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/lark/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "lastpass",
+    "name": "LastPass",
+    "version": "2.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/lastpass/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "lemmy",
+    "name": "Lemmy",
+    "version": "1.1.1",
+    "aliases": [],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/lemmy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "linear",
+    "name": "Linear",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/linear/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "lineworks",
+    "name": "Line Works",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/lineworks/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "linkedin",
+    "name": "LinkedIn",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/linkedin/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "lobe-chat",
+    "name": "LobeChat",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/lobe-chat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "localazy",
+    "name": "Localazy",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/localazy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "magic-level",
+    "name": "Magic Level",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/magic-level/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mailbox.org",
+    "name": "Mailbox.org",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mailbox.org/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mailfence",
+    "name": "Mailfence",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mailfence/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mastodeck",
+    "name": "Mastodeck",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mastodeck/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mastodon",
+    "name": "Mastodon",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mastodon/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "mattermost",
+    "name": "Mattermost",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mattermost/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mdaemon",
+    "name": "MDaemon Worldclient",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mdaemon/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "medium",
+    "name": "Medium",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/medium/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "meetup",
+    "name": "Meetup",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/meetup/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "memos",
+    "name": "memos",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/memos/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "messenger",
+    "name": "Messenger",
+    "version": "1.8.6",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/messenger/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "meta-business-suite",
+    "name": "Meta Business Suite",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/meta-business-suite/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mewe",
+    "name": "MeWe",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mewe/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mightytext",
+    "name": "MightyText",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mightytext/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "miniflux",
+    "name": "Miniflux",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/miniflux/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "miro",
+    "name": "Miro",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/miro/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mirotalk-bro",
+    "name": "MiroTalk Live Broadcast",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mirotalk-bro/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mirotalk-c2c",
+    "name": "MiroTalk C2C",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mirotalk-c2c/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mirotalk-p2p",
+    "name": "MiroTalk P2P",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mirotalk-p2p/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mirotalk-sfu",
+    "name": "MiroTalk SFU",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mirotalk-sfu/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mirotalk-webrtc",
+    "name": "MiroTalk WebRTC",
+    "version": "1.2.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mirotalk-webrtc/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "misskey",
+    "name": "Misskey",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/misskey/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mistral",
+    "name": "Le Chat by Mistral",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mistral/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "monarch-money",
+    "name": "Monarch Money",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/monarch-money/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "monday",
+    "name": "Monday",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/monday/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "monicahq",
+    "name": "Monica HQ",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/monicahq/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "moodle",
+    "name": "Moodle",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/moodle/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "ms-planner",
+    "name": "Microsoft Planner",
+    "version": "1.0.1",
+    "aliases": [
+      "office",
+      "tasks"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/ms-planner/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "msteams",
+    "name": "Microsoft Teams",
+    "version": "3.3.4",
+    "aliases": [
+      "teamsChat"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/msteams/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mstodo",
+    "name": "Microsoft To Do",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mstodo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "mysms",
+    "name": "MySMS",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/mysms/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "navidrome",
+    "name": "Navidrome",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/navidrome/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "netatmo-energy",
+    "name": "Netatmo Energy",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/netatmo-energy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "netlify",
+    "name": "Netlify",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/netlify/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "NewsBlur",
+    "name": "NewsBlur",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/NewsBlur/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextcloud",
+    "name": "Nextcloud",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextcloud/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextcloud-calendar",
+    "name": "Nextcloud Calendar",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextcloud-calendar/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextcloud-carnet",
+    "name": "Carnet (Nextcloud)",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextcloud-carnet/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextcloud-cospend",
+    "name": "Nextcloud Cospend",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextcloud-cospend/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextcloud-deck",
+    "name": "Nextcloud Deck",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextcloud-deck/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextcloud-news",
+    "name": "Nextcloud News",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextcloud-news/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextcloud-talk",
+    "name": "Nextcloud Talk",
+    "version": "1.4.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextcloud-talk/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextcloud-tasks",
+    "name": "Nextcloud Tasks",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextcloud-tasks/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nextdoor",
+    "name": "Nextdoor",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nextdoor/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "noisli",
+    "name": "Noisli",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/noisli/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nomadlist",
+    "name": "NomadList",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nomadlist/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "nostr",
+    "name": "Nostr",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/nostr/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "notion",
+    "name": "Notion",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/notion/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "notion-calendar",
+    "name": "Notion Calendar",
+    "version": "1.0.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/notion-calendar/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "ntfy",
+    "name": "ntfy",
+    "version": "1.1.1",
+    "aliases": [
+      "Notify"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/ntfy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "odoo",
+    "name": "Odoo",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/odoo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "odysee",
+    "name": "Odysee",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/odysee/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "office365-owa",
+    "name": "Office 365 Outlook",
+    "version": "1.7.4",
+    "aliases": [
+      "live.com",
+      "outlook"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/office365-owa/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "onedrive",
+    "name": "OneDrive",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/onedrive/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "onenote",
+    "name": "OneNote",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/onenote/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "online-go",
+    "name": "Online Go",
+    "version": "1.0.1",
+    "aliases": [
+      "OGS"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/online-go/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "onmail",
+    "name": "onMail",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/onmail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "open-webui",
+    "name": "Open WebUI",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/open-webui/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "oreilly-learning",
+    "name": "O'Reilly Learning",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/oreilly-learning/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "outreach",
+    "name": "Outreach",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/outreach/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "OVHCloud",
+    "name": "OVH Cloud",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/OVHCloud/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "paperless-ngx",
+    "name": "Paperless NGX",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/paperless-ngx/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "parro",
+    "name": "Parro",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/parro/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pastebin",
+    "name": "Pastebin",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pastebin/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "patreon",
+    "name": "Patreon",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/patreon/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "paymo",
+    "name": "Paymo",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/paymo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "penpot",
+    "name": "Penpot",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/penpot/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "peopleperhour",
+    "name": "People Per Hour",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/peopleperhour/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "perplexity",
+    "name": "Perplexity AI",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/perplexity/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "phanpy",
+    "name": "Phanpy",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/phanpy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pinterest",
+    "name": "Pinterest",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pinterest/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pipefy",
+    "name": "Pipefy",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pipefy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pivotal-tracker",
+    "name": "pivotal-tracker",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pivotal-tracker/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pixelfed",
+    "name": "Pixelfed",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pixelfed/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pixieset",
+    "name": "Pixieset",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pixieset/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "plan",
+    "name": "Plan",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/plan/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "planitpoker",
+    "name": "PlanITPoker",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/planitpoker/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "plek",
+    "name": "Plek",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/plek/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pleroma",
+    "name": "Pleroma",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pleroma/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "plurk",
+    "name": "Plurk",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/plurk/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pocket",
+    "name": "Pocket",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pocket/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pocketcasts",
+    "name": "PocketCasts",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pocketcasts/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "podio",
+    "name": "Podio",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/podio/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "poe",
+    "name": "poe",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/poe/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pomodoro-tracker",
+    "name": "Pomodoro Tracker",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pomodoro-tracker/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "portainer",
+    "name": "Portainer",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/portainer/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "posteo",
+    "name": "Posteo",
+    "version": "1.1.1",
+    "aliases": [
+      "mail",
+      "e-mail"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/posteo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "postman",
+    "name": "Postman",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/postman/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "producthunt",
+    "name": "Product Hunt",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/producthunt/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "productive",
+    "name": "Productive",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/productive/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "proton-calendar",
+    "name": "ProtonCalendar",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/proton-calendar/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "proton-drive",
+    "name": "Proton Drive",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/proton-drive/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "proton-mail",
+    "name": "Proton Mail",
+    "version": "1.7.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/proton-mail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "proton-pass",
+    "name": "Proton Pass",
+    "version": "1.0.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/proton-pass/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "protonet",
+    "name": "protonet",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/protonet/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pulse-sms",
+    "name": "PulseSMS",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pulse-sms/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "purelymail",
+    "name": "Purelymail",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/purelymail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pushbullet",
+    "name": "Pushbullet",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pushbullet/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "pushover",
+    "name": "Pushover",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/pushover/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "quora",
+    "name": "Quora",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/quora/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "rainloop",
+    "name": "RainLoop",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/rainloop/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "reclaim",
+    "name": "Reclaim",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/reclaim/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "reddit",
+    "name": "Reddit",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/reddit/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "reddit-chat",
+    "name": "Reddit Chat",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/reddit-chat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "regex101",
+    "name": "Regex101",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/regex101/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "replit",
+    "name": "Replit",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/replit/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "revolt",
+    "name": "Revolt",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/revolt/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "ring-central",
+    "name": "RingCentral",
+    "version": "1.2.1",
+    "aliases": [
+      "Glip"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/ring-central/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "riseup",
+    "name": "Riseup.net",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/riseup/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "ritetag",
+    "name": "Ritetag",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/ritetag/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "rocketchat",
+    "name": "Rocket.Chat",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/rocketchat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "romeo",
+    "name": "Romeo",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/romeo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "roundcube",
+    "name": "Roundcube",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/roundcube/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "rydoo",
+    "name": "Rydoo",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/rydoo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "schildichat",
+    "name": "SchildiChat",
+    "version": "1.1.1",
+    "aliases": [
+      "Element",
+      "Riot.im",
+      "Matrix"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/schildichat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "scribens",
+    "name": "Scribens",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/scribens/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "scrumpy",
+    "name": "Scrumpy",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/scrumpy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "sendtask",
+    "name": "Sendtask",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/sendtask/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "sharezone",
+    "name": "Sharezone",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/sharezone/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "simplelogin",
+    "name": "SimpleLogin",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/simplelogin/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "simplenote",
+    "name": "Simplenote",
+    "version": "1.4.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/simplenote/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "skiff-mail",
+    "name": "Skiff Mail",
+    "version": "1.2.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/skiff-mail/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "skype",
+    "name": "Skype",
+    "version": "3.6.3",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/skype/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "slack",
+    "name": "Slack",
+    "version": "1.6.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/slack/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "slite",
+    "name": "Slite",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/slite/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "slowly",
+    "name": "Slowly",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/slowly/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "smartsheet",
+    "name": "SmartSheet",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/smartsheet/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "snapchat",
+    "name": "Snapchat",
+    "version": "1.2.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/snapchat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "snapdrop",
+    "name": "Snapdrop",
+    "version": "1.4.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/snapdrop/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "sococo",
+    "name": "Sococo",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/sococo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "sogo",
+    "name": "SOGo",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/sogo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "somtoday",
+    "name": "SomToday",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/somtoday/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "sonarqube",
+    "name": "SonarQube",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/sonarqube/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "spikenow",
+    "name": "Spike",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/spikenow/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "stackexchange",
+    "name": "StackExchange",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/stackexchange/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "stackoverflow",
+    "name": "Stack Overflow",
+    "version": "0.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/stackoverflow/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "stackoverflow-chat",
+    "name": "Stack Overflow Chat",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/stackoverflow-chat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "standardnotes",
+    "name": "StandardNotes",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/standardnotes/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "statuzer",
+    "name": "Statuzer",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/statuzer/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "steamchat",
+    "name": "SteamChat",
+    "version": "1.5.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/steamchat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "stoat",
+    "name": "Stoat",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/stoat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "strava",
+    "name": "Strava",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/strava/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "stride",
+    "name": "Stride",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/stride/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "super-productivity",
+    "name": "Super Productivity",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/super-productivity/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "superhuman",
+    "name": "Superhuman",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/superhuman/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "superlist",
+    "name": "Superlist",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/superlist/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "sympatia",
+    "name": "Sympatia",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/sympatia/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "sync",
+    "name": "Sync",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/sync/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "synology-chat",
+    "name": "Synology Chat",
+    "version": "1.0.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/synology-chat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "taiga",
+    "name": "Taiga",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/taiga/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "talkspirit",
+    "name": "talkspirit",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/talkspirit/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "tawk",
+    "name": "Tawk.to",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tawk/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "tchap",
+    "name": "Tchap",
+    "version": "1.1.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tchap/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "teamleader",
+    "name": "teamleader",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/teamleader/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "teamweek",
+    "name": "Teamweek",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/teamweek/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "teamwork-projects",
+    "name": "Teamwork Projects",
+    "version": "0.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/teamwork-projects/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "techmeme",
+    "name": "techmeme",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/techmeme/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "telegram",
+    "name": "Telegram",
+    "version": "3.4.5",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/telegram/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "temp-mail",
+    "name": "Temp Mail",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/temp-mail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "thelounge",
+    "name": "The Lounge",
+    "version": "1.4.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/thelounge/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "threads",
+    "name": "Threads",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/threads/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "threema",
+    "name": "Threema",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/threema/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "tick",
+    "name": "tick",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tick/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "TickTick",
+    "name": "TickTick",
+    "version": "1.4.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/TickTick/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "tiktok",
+    "name": "Tiktok",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tiktok/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "tinder",
+    "name": "Tinder",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tinder/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "tixio",
+    "name": "Tixio",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tixio/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "todoist",
+    "name": "Todoist",
+    "version": "1.5.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/todoist/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "toggl",
+    "name": "Toggl",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/toggl/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "traccar",
+    "name": "Traccar",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/traccar/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "trakt",
+    "name": "Trakt",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/trakt/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "trello",
+    "name": "Trello",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/trello/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "trilium",
+    "name": "Trilium",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/trilium/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "truelancer",
+    "name": "Truelancer",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/truelancer/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "tt-rss",
+    "name": "Tiny Tiny RSS",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tt-rss/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "tutanota",
+    "name": "Tuta Mail",
+    "version": "1.3.3",
+    "aliases": [
+      "Tutanota"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tutanota/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "tweetdeck",
+    "name": "Tweetdeck",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/tweetdeck/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "twist",
+    "name": "Twist",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/twist/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "twitch",
+    "name": "Twitch",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/twitch/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "twitter",
+    "name": "X",
+    "version": "1.4.2",
+    "aliases": [
+      "Twitter"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/twitter/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "twitter-dm",
+    "name": "Twitter DM",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/twitter-dm/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "udemy",
+    "name": "Udemy",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/udemy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "unraid",
+    "name": "Unraid",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/unraid/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "upwork",
+    "name": "upwork",
+    "version": "1.0.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/upwork/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "viva-engage",
+    "name": "Viva Engage",
+    "version": "1.0.0",
+    "aliases": [
+      "yammer"
+    ],
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/viva-engage/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "vk",
+    "name": "VK",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/vk/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "voetbal-nl",
+    "name": "Voetbal",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/voetbal-nl/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "voxer",
+    "name": "Voxer",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/voxer/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "wakapi",
+    "name": "Wakapi",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/wakapi/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "wakatime",
+    "name": "Wakatime",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/wakatime/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "webex-teams",
+    "name": "Webex Teams",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/webex-teams/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "wechat",
+    "name": "WeChat",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/wechat/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "weekplan",
+    "name": "Weekplan",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/weekplan/icon.svg"
+    }
+  },
+  {
+    "featured": true,
+    "id": "whatsapp",
+    "name": "WhatsApp",
+    "version": "3.5.7",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/whatsapp/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "whereby",
+    "name": "Whereby",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/whereby/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "whimsical",
+    "name": "Whimsical",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/whimsical/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "wikipedia",
+    "name": "Wikipedia",
+    "version": "1.0.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/wikipedia/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "wire",
+    "name": "Wire",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/wire/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "withspectrum",
+    "name": "Spectrum",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/withspectrum/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "workflowy",
+    "name": "WorkFlowy",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/workflowy/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "workplace",
+    "name": "Workplace",
+    "version": "1.5.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/workplace/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "wrike",
+    "name": "Wrike",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/wrike/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "xing",
+    "name": "XING",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/xing/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "xmpp",
+    "name": "XMPP",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/xmpp/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "yahoo-mail",
+    "name": "Yahoo Mail",
+    "version": "1.3.5",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/yahoo-mail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "yandex-mail",
+    "name": "Yandex Mail",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/yandex-mail/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "youtrack",
+    "name": "YouTrack",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/youtrack/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "youtube",
+    "name": "YouTube",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/youtube/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "youtubemusic",
+    "name": "YouTube Music",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/youtubemusic/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zalo",
+    "name": "Zalo",
+    "version": "1.6.0",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zalo/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zammad",
+    "name": "Zammad",
+    "version": "1.1.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zammad/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zendesk",
+    "name": "Zendesk",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zendesk/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zenhub",
+    "name": "ZenHub",
+    "version": "1.3.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zenhub/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zeplin",
+    "name": "Zeplin",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zeplin/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zimbra",
+    "name": "Zimbra",
+    "version": "1.3.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zimbra/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zoho",
+    "name": "Zoho Mail",
+    "version": "1.4.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zoho/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zoho-projects",
+    "name": "Zoho Projects",
+    "version": "1.2.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zoho-projects/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zoom",
+    "name": "Zoom",
+    "version": "1.4.2",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zoom/icon.svg"
+    }
+  },
+  {
+    "featured": false,
+    "id": "zulip",
+    "name": "Zulip",
+    "version": "1.4.1",
+    "icons": {
+      "svg": "https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/zulip/icon.svg"
+    }
+  }
+]

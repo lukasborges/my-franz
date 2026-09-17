@@ -40,7 +40,12 @@ if (!isDevMode || (isDevMode && useLiveAPI)) {
   web = DEV_API_WEBSITE;
 }
 
-export const API = api;
+// Self-built: every API call goes to the embedded local server started by the
+// main process (src/electron/localServer.js). The URL is handed over via env.
+const localServerUrl = process.env.FRANZ_LOCAL_API
+  || (process.type === 'renderer' ? require('@electron/remote').process.env.FRANZ_LOCAL_API : null); // eslint-disable-line global-require
+
+export const API = localServerUrl || api;
 export const API_VERSION = 'v1';
 export const WEBSITE = web;
 

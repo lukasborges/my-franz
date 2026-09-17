@@ -45,6 +45,7 @@ app.commandLine.appendSwitch('disable-features', 'CrossOriginOpenerPolicy');
 app.commandLine.appendSwitch('disable-site-isolation-trials');
 
 import Settings from './electron/Settings';
+import LocalServer from './electron/localServer';
 import handleDeepLink from './electron/deepLinking';
 import './electron/exception';
 import ipcApi from './electron/ipc-api';
@@ -62,7 +63,7 @@ import { asarPath } from './helpers/asar-helpers';
 import { isValidExternalURL } from './helpers/url-helpers';
 import userAgent from './helpers/userAgent-helpers';
 import {
-  darkThemeGrayDarker, darkThemeGrayDarkest, themeGrayLightest, windowsTitleBarHeight
+  darkThemeGrayDarker, darkThemeGrayDarkest, themeGrayLightest, windowsTitleBarHeight,
 } from './theme/default/legacy';
 
 /* eslint-enable import/first */
@@ -347,9 +348,14 @@ if (argv['auth-negotiate-delegate-whitelist']) {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', () => {
+app.on('ready', async () => {
   // force app to live in /Applications
   enforceMacOSAppLocation();
+
+  // Self-built: start the embedded API server replacing the Franz cloud
+  const localServer = new LocalServer();
+  process.env.FRANZ_LOCAL_API = await localServer.start();
+  debug('Local API server started at', process.env.FRANZ_LOCAL_API);
 
   // Register App URL
   app.setAsDefaultProtocolClient('franz');
