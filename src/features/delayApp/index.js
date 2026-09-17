@@ -54,6 +54,10 @@ export default function init(stores) {
     state,
   };
 
+  // Self-built: never show the "please wait / upgrade" delay screen.
+  setVisibility(false);
+  return;
+
   reaction(
     () => (
       stores.user.isLoggedIn
