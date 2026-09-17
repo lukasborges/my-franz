@@ -5,7 +5,7 @@ import {
   Menu,
   webContents,
 } from '@electron/remote';
-import { clipboard, ipcRenderer, shell } from 'electron';
+import { ipcRenderer, shell } from 'electron';
 import { autorun, observable } from 'mobx';
 import { defineMessages } from 'react-intl';
 
@@ -525,9 +525,7 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         label: intl.formatMessage(menuItems.debugInfo),
         click: () => {
           const { debugInfo } = window.franz.stores.app;
-          clipboard.write({
-            text: JSON.stringify(debugInfo, null, 2),
-          });
+          navigator.clipboard.writeText(JSON.stringify(debugInfo, null, 2));
 
           const notification = new window.Notification(intl.formatMessage(menuItems.debugInfoCopiedHeadline), {
             body: intl.formatMessage(menuItems.debugInfoCopiedBody),
@@ -1322,9 +1320,7 @@ export default class FranzMenu {
       click: () => {
         const { debugInfo } = this.stores.app;
 
-        clipboard.write({
-          text: JSON.stringify(debugInfo),
-        });
+        navigator.clipboard.writeText(JSON.stringify(debugInfo));
 
         this.actions.app.notify({
           title: intl.formatMessage(menuItems.debugInfoCopiedHeadline),

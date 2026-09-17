@@ -1,5 +1,6 @@
 import {
   clipboard,
+  ClipboardItem,
   ContextMenuParams,
   nativeImage,
   shell,
@@ -143,10 +144,10 @@ export const buildMenuTpl = ({
       id: 'copyLink',
       label: 'Copy Link',
       click() {
-        clipboard.write({
-          bookmark: props.linkText,
-          text: props.linkURL,
-        });
+        clipboard.write([new ClipboardItem({
+          'text/plain': props.linkURL,
+          'electron application/bookmark': { title: props.linkText, url: props.linkURL },
+        })]);
       },
     }, {
       type: 'separator',
@@ -176,9 +177,9 @@ export const buildMenuTpl = ({
           const imageBuffer = await resp.buffer();
           const image = nativeImage.createFromBuffer(imageBuffer);
 
-          clipboard.write({
-            image,
-          });
+          clipboard.write([new ClipboardItem({
+            'image/png': new Blob([image.toPNG()], { type: 'image/png' }),
+          })]);
         } catch (e) {
           console.error(e);
         }
@@ -187,10 +188,10 @@ export const buildMenuTpl = ({
       id: 'copyImageAddress',
       label: 'Copy Image Address',
       click() {
-        clipboard.write({
-          bookmark: props.srcURL,
-          text: props.srcURL,
-        });
+        clipboard.write([new ClipboardItem({
+          'text/plain': props.srcURL,
+          'electron application/bookmark': { title: props.srcURL, url: props.srcURL },
+        })]);
       },
     }, {
       type: 'separator',
