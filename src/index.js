@@ -156,6 +156,14 @@ if (isLinux && ['Pantheon', 'Unity:Unity7'].indexOf(process.env.XDG_CURRENT_DESK
   process.env.XDG_CURRENT_DESKTOP = 'Unity';
 }
 
+// Electron 36 made GTK 4 the default on GNOME, but system modules such as the
+// canberra and PackageKit GTK modules still pull GTK 2/3 symbols into the
+// process, which aborts before the first window opens. Pin GTK 3 until those
+// modules are gone. Override with --gtk-version on the command line.
+if (isLinux && !process.argv.some(arg => arg.startsWith('--gtk-version'))) {
+  app.commandLine.appendSwitch('gtk-version', '3');
+}
+
 // Disable GPU acceleration
 if (!settings.get('enableGPUAcceleration')) {
   debug('Disable GPU Acceleration');
@@ -323,7 +331,6 @@ const createWindow = () => {
 
   app.mainWindow = mainWindow;
   app.isMaximized = mainWindow.isMaximized();
-
 };
 
 // Allow passing command line parameters/switches to electron
