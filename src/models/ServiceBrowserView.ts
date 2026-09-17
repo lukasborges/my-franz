@@ -231,7 +231,10 @@ export class ServiceBrowserView {
       });
 
       this.webContents.on('will-navigate', (...args) => {
-        this.gmailLoginHack(args[1]);
+        // Do NOT call gmailLoginHack here: setUserAgent() during a pending
+        // navigation cancels it (SetUserAgentOverride), which breaks cross-origin
+        // form POSTs such as SAML ACS redirects to accounts.google.com and causes
+        // an endless IdP redirect loop. The UA is updated in did-navigate instead.
 
         if (typeof this.recipe.eventWillNavigate === 'function') {
           this.recipe.eventWillNavigate(this, ...args);
@@ -268,7 +271,10 @@ export class ServiceBrowserView {
         } else if (disposition === 'background-tab' || disposition === 'foreground-tab') {
           action = 'deny';
 
-          if (isValidExternalURL(url)) {
+          if (url.startsWith('https://accounts.google.com')) {
+            // Google sign-in links use target=_blank; keep the login inside the service.
+            this.webContents.loadURL(url);
+          } else if (isValidExternalURL(url)) {
             shell.openExternal(url);
           }
         }
