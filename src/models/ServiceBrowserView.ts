@@ -17,7 +17,6 @@ import { isMac } from '../environment';
 import { IPC } from '../features/todos/constants';
 import { getRecipeDirectory, getDevRecipeDirectory, loadRecipeConfig } from '../helpers/recipe-helpers';
 import { isValidExternalURL } from '../helpers/url-helpers';
-import userAgent from '../helpers/userAgent-helpers';
 import {
   REQUEST_SERVICE_SPELLCHECKING_LANGUAGE,
   SERVICE_SPELLCHECKING_LANGUAGE,
@@ -235,10 +234,9 @@ export class ServiceBrowserView {
       });
 
       this.webContents.on('will-navigate', (...args) => {
-        // Do NOT call gmailLoginHack here: setUserAgent() during a pending
-        // navigation cancels it (SetUserAgentOverride), which breaks cross-origin
-        // form POSTs such as SAML ACS redirects to accounts.google.com and causes
-        // an endless IdP redirect loop. The UA is updated in did-navigate instead.
+        // No setUserAgent() here: switching it during a pending navigation cancels
+        // it (SetUserAgentOverride), which breaks cross-origin form POSTs such as
+        // SAML ACS redirects and causes an endless IdP redirect loop.
 
         if (typeof this.recipe.eventWillNavigate === 'function') {
           this.recipe.eventWillNavigate(this, ...args);
@@ -248,16 +246,8 @@ export class ServiceBrowserView {
       this.webContents.on('did-navigate', (...args) => {
         didLoad(true);
 
-        this.gmailLoginHack(args[1]);
-
         if (typeof this.recipe.eventDidLoad === 'function') {
           this.recipe.eventDidLoad(this, ...args);
-        }
-      });
-
-      this.webContents.on('did-create-window', (childWindow, { url }) => {
-        if (url.startsWith('https://accounts.google.com')) {
-          childWindow.webContents.setUserAgent(userAgent(true));
         }
       });
 
@@ -537,14 +527,6 @@ export class ServiceBrowserView {
           -webkit-app-region: drag;
         }
       `);
-    }
-  }
-
-  gmailLoginHack(url) {
-    if (url.startsWith('https://accounts.google.com')) {
-      this.webContents.setUserAgent(userAgent(true));
-    } else {
-      this.webContents.setUserAgent(userAgent(false));
     }
   }
 

@@ -105,7 +105,7 @@ export default class Recipe {
     return fs.pathExistsSync(path.join(this.path, 'darkmode.css'));
   }
 
-  mockUserAgent(chromless = false) {
-    return userAgent(chromless);
+  mockUserAgent() {
+    return userAgent();
   }
 }
