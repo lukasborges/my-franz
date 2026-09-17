@@ -8,6 +8,8 @@ import fullscreenStatus from './fullscreen';
 import macOSPermissions from './macOSPermissions';
 import overlayWindow from './overlayWindow';
 import serviceCache from './serviceCache';
+import sessionManager from './sessionManager';
+import webContentsManager from './webContentsManager';
 import settings from './settings';
 import subscriptionWindow from './subscriptionWindow';
 
@@ -21,6 +23,8 @@ export default (params) => {
   fullscreenStatus(params);
   subscriptionWindow(params);
   serviceCache();
+  sessionManager();
+  webContentsManager();
   browserViewManager(params);
   overlayWindow(params);
   macOSPermissions(params);

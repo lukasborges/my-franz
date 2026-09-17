@@ -3,17 +3,10 @@ import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 
 import { autorun, observable } from 'mobx';
-import { webContents } from '@electron/remote';
+import { invokeWebContents, watchNavigation } from '../../../helpers/webContents-helpers';
 import WebControls from '../components/WebControls';
 import ServicesStore from '../../../stores/ServicesStore';
 import Service from '../../../models/Service';
-
-const URL_EVENTS = [
-  // 'did-start-loading',
-  'will-navigate',
-  'did-navigate',
-  'did-navigate-in-page',
-];
 
 @inject('stores', 'actions') @observer
 class WebControlsScreen extends Component {
@@ -27,28 +20,32 @@ class WebControlsScreen extends Component {
 
   autorunDisposer = null;
 
+  navigationWatcher = null;
+
   componentDidMount() {
     const { service } = this.props;
 
     this.autorunDisposer = autorun(() => {
-      if (service.isAttached) {
-        this.webContents = webContents.fromId(service.webContentsId);
+      if (!service.isAttached || this.webContents === service.webContentsId) return;
 
-        this.url = this.webContents.getURL();
+      if (this.navigationWatcher) this.navigationWatcher.stop();
 
-        URL_EVENTS.forEach((event) => {
-          this.webContents.on(event, (e, url) => {
-            this.url = url;
-            this.canGoBack = this.webContents.canGoBack();
-            this.canGoForward = this.webContents.canGoForward();
-          });
-        });
-      }
+      this.webContents = service.webContentsId;
+
+      this.navigationWatcher = watchNavigation(this.webContents, ({ url, canGoBack, canGoForward }) => {
+        this.url = url;
+        this.canGoBack = canGoBack;
+        this.canGoForward = canGoForward;
+      });
+
+      this.navigationWatcher.ready.then((url) => { if (url) this.url = url; });
     });
   }
 
   componentWillUnmount() {
     this.autorunDisposer();
+
+    if (this.navigationWatcher) this.navigationWatcher.stop();
   }
 
   goHome() {
@@ -62,19 +59,19 @@ class WebControlsScreen extends Component {
   reload() {
     if (!this.webContents) return;
 
-    this.webContents.reload();
+    invokeWebContents(this.webContents, 'reload');
   }
 
   goBack() {
     if (!this.webContents) return;
 
-    this.webContents.goBack();
+    invokeWebContents(this.webContents, 'goBack');
   }
 
   goForward() {
     if (!this.webContents) return;
 
-    this.webContents.goForward();
+    invokeWebContents(this.webContents, 'goForward');
   }
 
   navigate(newUrl) {
@@ -93,7 +90,7 @@ class WebControlsScreen extends Component {
       }
     }
 
-    this.webContents.loadURL(url);
+    invokeWebContents(this.webContents, 'loadURL', url);
     this.url = url;
   }
 

@@ -1,6 +1,6 @@
-import { BrowserWindow, webContents } from '@electron/remote';
 import { ipcRenderer } from 'electron';
 import { reaction } from 'mobx';
+import { closeWindowOf } from '../../helpers/webContents-helpers';
 import {
   OVERLAY_OPEN, PLAN_SELECTION_GET_DATA, PLAN_SELECTION_TRIGGER_ACTION, RELAY_MESSAGE,
 } from '../../ipcChannels';
@@ -53,12 +53,10 @@ export default function initPlanSelection(stores, actions) {
                 planId: data.planId,
                 overrideParent: senderId,
                 onCloseWindow: async () => {
-                  const planSelectionWindow = BrowserWindow.fromWebContents(webContents.fromId(senderId));
-
                   await user.getUserInfoRequest._promise;
 
                   if (user.isPremium) {
-                    planSelectionWindow.close();
+                    closeWindowOf(senderId);
                   } else {
                     debug('user has not made any decision');
                   }

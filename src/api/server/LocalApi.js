@@ -1,6 +1,6 @@
 import { ipcRenderer } from 'electron';
-import { session } from '@electron/remote';
 import du from 'du';
+import { SESSION_CLEAR_CACHE } from '../../ipcChannels';
 
 import { getServicePartitionsDirectory } from '../../helpers/service-helpers.js';
 
@@ -41,16 +41,12 @@ export default class LocalApi {
   }
 
   async clearCache(serviceId) {
-    const s = session.fromPartition(`persist:service-${serviceId}`);
-
     debug('LocalApi::clearCache resolves', serviceId);
-    return s.clearCache();
+    return ipcRenderer.invoke(SESSION_CLEAR_CACHE, `persist:service-${serviceId}`);
   }
 
   async clearAppCache() {
-    const s = session.defaultSession;
-
     debug('LocalApi::clearCache clearAppCache');
-    return s.clearCache();
+    return ipcRenderer.invoke(SESSION_CLEAR_CACHE);
   }
 }

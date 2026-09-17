@@ -1,4 +1,4 @@
-import { app, webContents } from '@electron/remote';
+import { app } from '@electron/remote';
 import { debounce, remove } from 'lodash';
 import {
   action,
@@ -10,6 +10,7 @@ import {
 import ms from 'ms';
 
 import { ipcRenderer } from 'electron';
+import { invokeWebContents, sendToWebContents } from '../helpers/webContents-helpers';
 import { serviceLimitStore } from '../features/serviceLimit';
 import { TODOS_RECIPE_ID } from '../features/todos';
 import { workspaceStore } from '../features/workspaces';
@@ -541,16 +542,11 @@ export default class ServicesStore extends Store {
   @action _sendIPCMessage({ serviceId, channel, args }) {
     const service = this.one(serviceId);
 
-    let contents;
-    if (service.isTodos) {
-      contents = this.stores.todos.webContents;
-    } else {
-      contents = webContents.fromId(service.webContentsId);
-    }
+    const webContentsId = service.isTodos
+      ? this.stores.todos.webContentsId
+      : service.webContentsId;
 
-    if (contents) {
-      contents.send(channel, toJS(args));
-    }
+    sendToWebContents(webContentsId, channel, toJS(args));
   }
 
   @action _sendIPCMessageToAllServices({ channel, args }) {
@@ -832,11 +828,7 @@ export default class ServicesStore extends Store {
       const isMuted = isAppMuted || service.isMuted;
 
       if (isAttached) {
-        const serviceWebContents = webContents.fromId(service.webContentsId);
-
-        if (serviceWebContents) {
-          serviceWebContents.setAudioMuted(isMuted);
-        }
+        invokeWebContents(service.webContentsId, 'setAudioMuted', isMuted);
       }
     });
   }

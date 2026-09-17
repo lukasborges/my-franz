@@ -3,7 +3,6 @@ import moment from 'moment';
 import jwt from 'jsonwebtoken';
 import localStorage from 'mobx-localstorage';
 import ms from 'ms';
-import { session } from '@electron/remote';
 
 import { ipcRenderer } from 'electron';
 import { isDevMode } from '../environment';
@@ -15,7 +14,7 @@ import { sleep } from '../helpers/async-helpers';
 import { getPlan } from '../helpers/plan-helpers';
 import { PLANS } from '../config';
 import { TODOS_PARTITION_ID } from '../features/todos';
-import { USER_LOGIN_STATUS } from '../ipcChannels';
+import { SESSION_CLEAR_STORAGE_DATA, USER_LOGIN_STATUS } from '../ipcChannels';
 
 const debug = require('debug')('Franz:UserStore');
 
@@ -303,8 +302,7 @@ export default class UserStore extends Store {
     this.stores.services.allServicesRequest.invalidate().reset();
 
     if (this.stores.todos.isTodosEnabled) {
-      const sess = session.fromPartition(TODOS_PARTITION_ID);
-      sess.clearStorageData();
+      ipcRenderer.invoke(SESSION_CLEAR_STORAGE_DATA, TODOS_PARTITION_ID);
     }
   }
 

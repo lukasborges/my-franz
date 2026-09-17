@@ -7,7 +7,6 @@ import {
 } from 'mobx';
 import localStorage from 'mobx-localstorage';
 
-import { webContents } from '@electron/remote';
 import ms from 'ms';
 import {
   DEFAULT_IS_FEATURE_ENABLED_BY_USER,
@@ -75,9 +74,7 @@ export default class TodoStore extends FeatureStore {
   }
 
   @computed get webContents() {
-    if (!this.webContentsId) return null;
-
-    return webContents.fromId(this.webContentsId);
+    return this.webContentsId;
   }
 
   // ========== PUBLIC API ========= //
@@ -235,7 +232,7 @@ export default class TodoStore extends FeatureStore {
       const service = this.stores.services.one(serviceId);
 
       if (service) {
-        service.webContents.loadURL(url);
+        service.loadURL(url);
       }
 
       this.actions.service.setActive({ serviceId });

@@ -1,5 +1,6 @@
 import { autorun, observable } from 'mobx';
-import { session } from '@electron/remote';
+import { ipcRenderer } from 'electron';
+import { SESSION_SET_PROXY } from '../../ipcChannels';
 
 import { DEFAULT_FEATURES_CONFIG } from '../../config';
 
@@ -26,8 +27,6 @@ export default function init(stores) {
     debug('Service Proxy autorun');
 
     services.forEach((service) => {
-      const s = session.fromPartition(`persist:service-${service.id}`);
-
       if (config.isEnabled && (isPremiumUser || !config.isIncludedInCurrentPlan)) {
         const serviceProxyConfig = proxySettings[service.id];
 
@@ -35,7 +34,10 @@ export default function init(stores) {
           const proxyHost = `${serviceProxyConfig.host}${serviceProxyConfig.port ? `:${serviceProxyConfig.port}` : ''}`;
           debug(`Setting proxy config from service settings for "${service.name}" (${service.id}) to`, proxyHost);
 
-          s.setProxy({ proxyRules: proxyHost }, () => {
+          ipcRenderer.invoke(SESSION_SET_PROXY, {
+            partition: `persist:service-${service.id}`,
+            proxyRules: proxyHost,
+          }).then(() => {
             debug(`Using proxy "${proxyHost}" for "${service.name}" (${service.id})`);
           });
         }
