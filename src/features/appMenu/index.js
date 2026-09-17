@@ -9,6 +9,7 @@ import { AppMenu } from '../../lib/Menu';
 import AppStore from '../../stores/AppStore';
 import SettingsStore from '../../stores/SettingsStore';
 import { windowsTitleBarHeight } from '../../theme/default/legacy';
+import { isLinux } from '../../environment';
 
 export const APP_MENU_ACKNOWLEDGED_KEY = 'appMenuBarAcknowledged';
 
@@ -18,7 +19,7 @@ const styles = theme => ({
     display: 'flex',
     paddingLeft: 4,
     alignItems: 'center',
-    WebkitAppRegion: 'drag',
+    WebkitAppRegion: isLinux ? 'no-drag' : 'drag',
   },
   brandIcon: {
     width: 18,

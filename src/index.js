@@ -188,13 +188,17 @@ const createWindow = () => {
     minHeight: 500,
     frame: !isMac,
     backgroundColor: !settings.get('darkMode') ? themeGrayLightest : darkThemeGrayDarkest,
-    titleBarStyle: 'hidden',
+    // Linux: native frame. Frameless + '-webkit-app-region: drag' on Linux makes the
+    // drag region swallow clicks meant for BrowserViews (electron#18529, #43320).
+    titleBarStyle: isLinux ? 'default' : 'hidden',
     autoHideMenuBar: true,
-    titleBarOverlay: {
-      color: !settings.get('darkMode') ? themeGrayLightest : darkThemeGrayDarker,
-      symbolColor: !settings.get('darkMode') ? '#000' : '#FFF',
-      height: parseInt(windowsTitleBarHeight, 10),
-    },
+    ...(isLinux ? {} : {
+      titleBarOverlay: {
+        color: !settings.get('darkMode') ? themeGrayLightest : darkThemeGrayDarker,
+        symbolColor: !settings.get('darkMode') ? '#000' : '#FFF',
+        height: parseInt(windowsTitleBarHeight, 10),
+      },
+    }),
     webPreferences: {
       nodeIntegration: true,
       webviewTag: true,
