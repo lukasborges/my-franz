@@ -90,10 +90,6 @@ const messages = defineMessages({
     id: 'settings.service.form.headlineBadges',
     defaultMessage: '!!!Unread message badges',
   },
-  titleIndicatorInfo: {
-    id: 'settings.service.form.titleIndicatorInfo',
-    defaultMessage: '!!!Uses the number in parentheses at the start of the tab title (e.g. "(3) Service Name") to update the badge. Enable this if the badge doesn\'t update on its own.',
-  },
   headlineGeneral: {
     id: 'settings.service.form.headlineGeneral',
     defaultMessage: '!!!General',
@@ -334,10 +330,6 @@ export default @observer class EditServiceForm extends Component {
                       </p>
                     </Fragment>
                   )}
-                  <Toggle field={form.$('useTitleIndicator')} />
-                  <p className="settings__help">
-                    {intl.formatMessage(messages.titleIndicatorInfo)}
-                  </p>
                 </div>
 
                 <div className="settings__settings-group">

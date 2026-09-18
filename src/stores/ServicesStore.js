@@ -749,7 +749,6 @@ export default class ServicesStore extends Store {
         hasCustomIcon: service.hasCustomIcon,
         isRestricted: service.isServiceAccessRestricted,
         isHibernating: service.isHibernating,
-        useTitleIndicator: service.useTitleIndicator,
       },
       recipeId: service.recipe.id,
     }));

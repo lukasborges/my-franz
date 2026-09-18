@@ -39,7 +39,6 @@ interface IServiceState {
   hasCustomIcon: boolean,
   isRestricted: boolean;
   isHibernating: boolean;
-  useTitleIndicator: boolean;
 }
 
 interface IServiceConfig {
@@ -180,8 +179,6 @@ export class ServiceBrowserView {
       });
 
       this.webContents.on('page-title-updated', (e, title) => {
-        if (!this.state.useTitleIndicator) return;
-
         const match = title.match(/^\((\d+)\)/);
         const count = match ? Number(match[1]) : 0;
 

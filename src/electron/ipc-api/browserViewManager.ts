@@ -25,7 +25,6 @@ interface IIPCServiceData {
     hasCustomIcon: boolean,
     isRestricted: boolean;
     isHibernating: boolean;
-    useTitleIndicator: boolean;
   },
   recipeId: string,
 }
@@ -54,7 +53,6 @@ const mockTodosService = ({ isActive = false }: { isActive?: boolean }): IIPCSer
       hasCustomIcon: false,
       isRestricted: false,
       isHibernating: false,
-      useTitleIndicator: false,
     },
     recipeId: TODOS_RECIPE_ID,
   };
