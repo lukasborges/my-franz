@@ -38,7 +38,6 @@ if (isDevMode) {
   process.env.NODE_ENV = 'production';
 }
 
-app.commandLine.appendSwitch('disable-features', 'CrossOriginOpenerPolicy');
 app.commandLine.appendSwitch('disable-site-isolation-trials');
 
 import Settings from './electron/Settings';
