@@ -33,6 +33,10 @@ class RecipeController {
 
   spellcheckProvider = null;
 
+  recipe = null;
+
+  hasInjectedDarkModeBeforeRecipeLoaded = false;
+
   ipcEvents = {
     'initialize-recipe': 'loadRecipeModule',
     'settings-update': 'updateAppSettings',
@@ -66,8 +70,9 @@ class RecipeController {
     // Delete module from cache
     delete require.cache[require.resolve(modulePath)];
     try {
+      this.recipe = new RecipeWebview();
       // eslint-disable-next-line
-      require(modulePath)(new RecipeWebview(), {...config, recipe,});
+      require(modulePath)(this.recipe, {...config, recipe,});
       debug('Initialize Recipe', config, recipe);
 
       this.settings.service = Object.assign(config, { recipe });
@@ -79,12 +84,36 @@ class RecipeController {
   update() {
     debug('isDarkModeEnabled', this.settings.service.isDarkModeEnabled);
 
+    const darkModeHandler = this.recipe && this.recipe.darkModeHandler;
+    const handlerConfig = {
+      removeDarkModeStyle,
+      isDarkModeStyleInjected,
+      injectDarkModeStyle: () => injectDarkModeStyle(this.settings.service.recipe.path),
+    };
+
     if (this.settings.service.isDarkModeEnabled) {
       debug('Enable dark mode');
-      injectDarkModeStyle(this.settings.service.recipe.path);
-    } else if (isDarkModeStyleInjected()) {
-      debug('Remove dark mode');
-      removeDarkModeStyle();
+
+      if (darkModeHandler) {
+        debug('Using recipe dark mode handler');
+        if (this.hasInjectedDarkModeBeforeRecipeLoaded) {
+          this.hasInjectedDarkModeBeforeRecipeLoaded = false;
+          removeDarkModeStyle();
+        }
+        darkModeHandler(true, handlerConfig);
+      } else if (!isDarkModeStyleInjected() && this.settings.service.recipe) {
+        injectDarkModeStyle(this.settings.service.recipe.path);
+        this.hasInjectedDarkModeBeforeRecipeLoaded = !this.recipe;
+      }
+    } else {
+      if (darkModeHandler) {
+        debug('Disabling dark mode via recipe handler');
+        darkModeHandler(false, handlerConfig);
+      }
+      if (isDarkModeStyleInjected()) {
+        debug('Remove dark mode');
+        removeDarkModeStyle();
+      }
     }
   }
 
