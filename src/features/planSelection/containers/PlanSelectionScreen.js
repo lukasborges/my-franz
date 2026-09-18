@@ -12,7 +12,7 @@ import PlanSelection from '../components/PlanSelection';
 const messages = defineMessages({
   dialogTitle: {
     id: 'feature.planSelection.fullscreen.dialog.title',
-    defaultMessage: '!!!Downgrade your Franz Plan',
+    defaultMessage: '!!!Downgrade your My Franz Plan',
   },
   dialogMessage: {
     id: 'feature.planSelection.fullscreen.dialog.message',

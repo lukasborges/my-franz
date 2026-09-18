@@ -16,8 +16,6 @@ $mdi-font-path: '../node_modules/mdi/fonts';
 @import './recipes.scss';
 @import './fonts.scss';
 @import './type.scss';
-@import './welcome.scss';
-@import './auth.scss';
 @import './tooltip.scss';
 @import './info-bar.scss';
 @import './status-bar-target-url.scss';
@@ -27,7 +25,6 @@ $mdi-font-path: '../node_modules/mdi/fonts';
 @import './subscription.scss';
 @import './subscription-popup.scss';
 @import './content-tabs.scss';
-@import './invite.scss';
 
 // form
 @import './input.scss';

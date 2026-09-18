@@ -1,4 +1,4 @@
-import { ipcRenderer, shell } from 'electron';
+import { ipcRenderer } from 'electron';
 import { autorun, observable } from 'mobx';
 import { defineMessages } from 'react-intl';
 import appValues from '../helpers/app-helpers';
@@ -120,7 +120,7 @@ export const menuItems = defineMessages({
   },
   reloadFranz: {
     id: 'menu.view.reloadFranz',
-    defaultMessage: '!!!Reload Franz',
+    defaultMessage: '!!!Reload My Franz',
   },
   reloadTodos: {
     id: 'menu.view.reloadTodos',
@@ -134,37 +134,17 @@ export const menuItems = defineMessages({
     id: 'menu.window.close',
     defaultMessage: '!!!Close',
   },
-  learnMore: {
-    id: 'menu.help.learnMore',
-    defaultMessage: '!!!Learn More',
-  },
-  changelog: {
-    id: 'menu.help.changelog',
-    defaultMessage: '!!!Changelog',
-  },
-  support: {
-    id: 'menu.help.support',
-    defaultMessage: '!!!Support',
-  },
   debugInfo: {
     id: 'menu.help.debugInfo',
     defaultMessage: '!!!Copy Debug Information',
   },
   debugInfoCopiedHeadline: {
     id: 'menu.help.debugInfoCopiedHeadline',
-    defaultMessage: '!!!Franz Debug Information',
+    defaultMessage: '!!!My Franz Debug Information',
   },
   debugInfoCopiedBody: {
     id: 'menu.help.debugInfoCopiedBody',
     defaultMessage: '!!!Your Debug Information has been copied to your clipboard.',
-  },
-  tos: {
-    id: 'menu.help.tos',
-    defaultMessage: '!!!Terms of Service',
-  },
-  privacy: {
-    id: 'menu.help.privacy',
-    defaultMessage: '!!!Privacy Statement',
   },
   file: {
     id: 'menu.file',
@@ -188,7 +168,7 @@ export const menuItems = defineMessages({
   },
   about: {
     id: 'menu.app.about',
-    defaultMessage: '!!!About Franz',
+    defaultMessage: '!!!About My Franz',
   },
   announcement: {
     id: 'menu.app.announcement',
@@ -411,33 +391,11 @@ const _templateFactory = intl => [
     role: 'help',
     submenu: [
       {
-        label: intl.formatMessage(menuItems.learnMore),
-        click() { shell.openExternal('https://meetfranz.com'); },
-      },
-      {
         label: intl.formatMessage(menuItems.announcement),
         click: () => {
           announcementActions.show();
         },
         visible: window.franz.stores.user.isLoggedIn && announcementsStore.areNewsAvailable,
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: intl.formatMessage(menuItems.support),
-        click() { shell.openExternal('https://meetfranz.com/support'); },
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: intl.formatMessage(menuItems.tos),
-        click() { shell.openExternal('https://meetfranz.com/terms'); },
-      },
-      {
-        label: intl.formatMessage(menuItems.privacy),
-        click() { shell.openExternal('https://meetfranz.com/privacy'); },
       },
     ],
   },
@@ -470,40 +428,11 @@ export const _titleBarTemplateFactory = ({ user, intl }) => [
         click: () => {
           showMessageBox({
             type: 'info',
-            title: 'Franz',
-            message: 'Franz',
+            title: 'My Franz',
+            message: 'My Franz',
             detail: `Version: ${appValues().version}\nRelease: ${process.versions.electron} / ${process.platform} / ${process.arch}`,
           });
         },
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: intl.formatMessage(menuItems.learnMore),
-        click() { shell.openExternal('https://meetfranz.com'); },
-      },
-      {
-        label: intl.formatMessage(menuItems.changelog),
-        click() { shell.openExternal('https://meetfranz.com/changelog'); },
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: intl.formatMessage(menuItems.support),
-        click() { shell.openExternal('https://meetfranz.com/support'); },
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: intl.formatMessage(menuItems.tos),
-        click() { shell.openExternal('https://meetfranz.com/terms'); },
-      },
-      {
-        label: intl.formatMessage(menuItems.privacy),
-        click() { shell.openExternal('https://meetfranz.com/privacy'); },
       },
       {
         type: 'separator',
@@ -1109,8 +1038,8 @@ export default class FranzMenu {
       click: () => {
         showMessageBox({
           type: 'info',
-          title: 'Franz',
-          message: 'Franz',
+          title: 'My Franz',
+          message: 'My Franz',
           detail: `Version: ${appValues().version}\nRelease: ${process.versions.electron} / ${process.platform} / ${process.arch}`,
         });
       },

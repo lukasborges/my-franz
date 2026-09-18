@@ -10,7 +10,6 @@ import Toggle from '../../ui/Toggle';
 import Select from '../../ui/Select';
 import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 
-import { FRANZ_TRANSLATION } from '../../../config';
 import { isMac } from '../../../environment';
 
 const messages = defineMessages({
@@ -38,17 +37,13 @@ const messages = defineMessages({
     id: 'settings.app.headlineAdvanced',
     defaultMessage: '!!!Advanced',
   },
-  translationHelp: {
-    id: 'settings.app.translationHelp',
-    defaultMessage: '!!!Help us to translate Franz into your language.',
-  },
   subheadlineCache: {
     id: 'settings.app.subheadlineCache',
     defaultMessage: '!!!Cache',
   },
   cacheInfo: {
     id: 'settings.app.cacheInfo',
-    defaultMessage: '!!!Franz cache is currently using {size} of disk space.',
+    defaultMessage: '!!!My Franz cache is currently using {size} of disk space.',
   },
   buttonClearAllCache: {
     id: 'settings.app.buttonClearAllCache',
@@ -72,7 +67,7 @@ const messages = defineMessages({
   },
   updateStatusUpToDate: {
     id: 'settings.app.updateStatusUpToDate',
-    defaultMessage: '!!!You are using the latest version of Franz',
+    defaultMessage: '!!!You are using the latest version of My Franz',
   },
   currentVersion: {
     id: 'settings.app.currentVersion',
@@ -192,15 +187,6 @@ export default @observer class EditSettingsForm extends Component {
                 )}
               </Fragment>
             </PremiumFeatureContainer>
-            <a
-              href={FRANZ_TRANSLATION}
-              target="_blank"
-              className="link"
-            >
-              {intl.formatMessage(messages.translationHelp)}
-              {' '}
-              <i className="mdi mdi-open-in-new" />
-            </a>
 
             {/* Advanced */}
             <h2 id="advanced">{intl.formatMessage(messages.headlineAdvanced)}</h2>

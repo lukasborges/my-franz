@@ -12,7 +12,7 @@ import ActivateTrialButton from '../ActivateTrialButton';
 const messages = defineMessages({
   upgradeToPro: {
     id: 'global.upgradeButton.upgradeToPro',
-    defaultMessage: '!!!Upgrade to Franz Professional',
+    defaultMessage: '!!!Upgrade to My Franz Professional',
   },
 });
 

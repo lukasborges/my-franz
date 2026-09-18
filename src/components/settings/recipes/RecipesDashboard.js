@@ -12,7 +12,6 @@ import Infobox from '../../ui/Infobox';
 import RecipeItem from './RecipeItem';
 import Loader from '../../ui/Loader';
 import Appear from '../../ui/effects/Appear';
-import { FRANZ_SERVICE_REQUEST } from '../../../config';
 import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
 import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 
@@ -45,10 +44,6 @@ const messages = defineMessages({
     id: 'settings.recipes.servicesSuccessfulAddedInfo',
     defaultMessage: '!!!Service successfully added',
   },
-  missingService: {
-    id: 'settings.recipes.missingService',
-    defaultMessage: '!!!Missing a service?',
-  },
   customRecipeIntro: {
     id: 'settings.recipes.customService.intro',
     defaultMessage: '!!!To add a custom service, copy the recipe folder into:',
@@ -56,10 +51,6 @@ const messages = defineMessages({
   openFolder: {
     id: 'settings.recipes.customService.openFolder',
     defaultMessage: '!!!Open directory',
-  },
-  openDevDocs: {
-    id: 'settings.recipes.customService.openDevDocs',
-    defaultMessage: '!!!Developer Documentation',
   },
   headlineCustomRecipes: {
     id: 'settings.recipes.customService.headline.customRecipes',
@@ -116,7 +107,6 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
     recipeFilter: PropTypes.string,
     recipeDirectory: PropTypes.string.isRequired,
     openRecipeDirectory: PropTypes.func.isRequired,
-    openDevDocs: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired,
     isCommunityRecipesIncludedInCurrentPlan: PropTypes.bool.isRequired,
   };
@@ -143,7 +133,6 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
       recipeFilter,
       recipeDirectory,
       openRecipeDirectory,
-      openDevDocs,
       classes,
       isCommunityRecipesIncludedInCurrentPlan,
     } = this.props;
@@ -203,11 +192,6 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
             >
               {intl.formatMessage(messages.customRecipes)}
             </Link>
-            <a href={FRANZ_SERVICE_REQUEST} target="_blank" className="link recipes__service-request">
-              {intl.formatMessage(messages.missingService)}
-              {' '}
-              <i className="mdi mdi-open-in-new" />
-            </a>
           </div>
           {/* )} */}
           {isLoading ? (
@@ -236,11 +220,6 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
                         onClick={openRecipeDirectory}
                         buttonType="secondary"
                         label={intl.formatMessage(messages.openFolder)}
-                      />
-                      <Button
-                        onClick={openDevDocs}
-                        buttonType="secondary"
-                        label={intl.formatMessage(messages.openDevDocs)}
                       />
                     </div>
                   </div>

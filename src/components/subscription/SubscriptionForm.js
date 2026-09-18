@@ -16,15 +16,15 @@ const messages = defineMessages({
   },
   teaserHeadline: {
     id: 'settings.account.headlineUpgradeAccount',
-    defaultMessage: '!!!Upgrade your account and get the full Franz experience',
+    defaultMessage: '!!!Upgrade your account and get the full My Franz experience',
   },
   teaserText: {
     id: 'subscription.teaser.intro',
-    defaultMessage: '!!!Franz 5 comes with a wide range of new features to boost up your everyday communication - batteries included. Check out our new plans and find out which one suits you most!',
+    defaultMessage: '!!!My Franz 5 comes with a wide range of new features to boost up your everyday communication - batteries included. Check out our new plans and find out which one suits you most!',
   },
   includedFeatures: {
     id: 'subscription.teaser.includedFeatures',
-    defaultMessage: '!!!Paid Franz Plans include:',
+    defaultMessage: '!!!Paid My Franz Plans include:',
   },
 });
 

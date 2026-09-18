@@ -13,7 +13,6 @@ import UserStore from '../../stores/UserStore';
 
 import RecipesDashboard from '../../components/settings/recipes/RecipesDashboard';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
-import { FRANZ_DEV_DOCS } from '../../config';
 import { gaEvent } from '../../lib/analytics';
 import { communityRecipesStore } from '../../features/communityRecipes';
 
@@ -80,7 +79,6 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
     } = this.props.stores;
 
     const {
-      app: appActions,
       service: serviceActions,
     } = this.props.actions;
 
@@ -131,10 +129,6 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
             shell.openItem(recipeDirectory);
             gaEvent('Recipe', 'open-recipe-folder', 'Open Folder');
           }}
-          openDevDocs={() => {
-            appActions.openExternalUrl({ url: FRANZ_DEV_DOCS });
-            gaEvent('Recipe', 'open-dev-docs', 'Developer Documentation');
-          }}
           isCommunityRecipesIncludedInCurrentPlan={communityRecipesStore.isCommunityRecipesIncludedInCurrentPlan}
           isUserPremiumUser={user.isPremium}
         />
@@ -151,9 +145,6 @@ RecipesScreen.wrappedComponent.propTypes = {
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    app: PropTypes.shape({
-      openExternalUrl: PropTypes.func.isRequired,
-    }).isRequired,
     service: PropTypes.shape({
       showAddServiceInterface: PropTypes.func.isRequired,
     }).isRequired,

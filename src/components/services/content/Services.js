@@ -13,7 +13,7 @@ import ServiceView from './ServiceView';
 const messages = defineMessages({
   welcome: {
     id: 'services.welcome',
-    defaultMessage: '!!!Welcome to Franz',
+    defaultMessage: '!!!Welcome to My Franz',
   },
   getStarted: {
     id: 'services.getStarted',

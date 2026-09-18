@@ -18,11 +18,11 @@ const messages = defineMessages({
   },
   headlineCustomUrl: {
     id: 'service.restrictedHandler.customUrl.headline',
-    defaultMessage: '!!!Franz Professional Plan required',
+    defaultMessage: '!!!My Franz Professional Plan required',
   },
   textCustomUrl: {
     id: 'service.restrictedHandler.customUrl.text',
-    defaultMessage: '!!!Please upgrade to the Franz Professional plan to use custom urls & self hosted services.',
+    defaultMessage: '!!!Please upgrade to the My Franz Professional plan to use custom urls & self hosted services.',
   },
   action: {
     id: 'service.restrictedHandler.action',

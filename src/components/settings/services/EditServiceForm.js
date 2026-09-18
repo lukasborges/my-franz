@@ -64,7 +64,7 @@ const messages = defineMessages({
   },
   customUrlPremiumInfo: {
     id: 'settings.service.form.customUrlPremiumInfo',
-    defaultMessage: '!!!To add self hosted services, you need a Franz Premium Supporter Account.',
+    defaultMessage: '!!!To add self hosted services, you need a My Franz Premium Supporter Account.',
   },
   customUrlUpgradeAccount: {
     id: 'settings.service.form.customUrlUpgradeAccount',
@@ -108,11 +108,11 @@ const messages = defineMessages({
   },
   proxyRestartInfo: {
     id: 'settings.service.form.proxy.restartInfo',
-    defaultMessage: '!!!Please restart Franz after changing proxy Settings.',
+    defaultMessage: '!!!Please restart My Franz after changing proxy Settings.',
   },
   proxyInfo: {
     id: 'settings.service.form.proxy.info',
-    defaultMessage: '!!!Proxy settings will not be synchronized with the Franz servers.',
+    defaultMessage: '!!!Proxy settings will not be synchronized with the My Franz servers.',
   },
 });
 

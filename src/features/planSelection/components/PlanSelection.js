@@ -21,7 +21,7 @@ const messages = defineMessages({
   },
   subheadline: {
     id: 'feature.planSelection.fullscreen.subheadline',
-    defaultMessage: '!!!It\'s time to make a choice. Franz works best on our Personal and Professional plans. Please have a look and choose the best one for you.',
+    defaultMessage: '!!!It\'s time to make a choice. My Franz works best on our Personal and Professional plans. Please have a look and choose the best one for you.',
   },
   textFree: {
     id: 'feature.planSelection.free.text',

@@ -23,25 +23,9 @@ const messages = defineMessages({
     id: 'settings.navigation.yourWorkspaces',
     defaultMessage: '!!!Your workspaces',
   },
-  account: {
-    id: 'settings.navigation.account',
-    defaultMessage: '!!!Account',
-  },
-  team: {
-    id: 'settings.navigation.team',
-    defaultMessage: '!!!Manage Team',
-  },
   settings: {
     id: 'settings.navigation.settings',
     defaultMessage: '!!!Settings',
-  },
-  inviteFriends: {
-    id: 'settings.navigation.inviteFriends',
-    defaultMessage: '!!!Invite Friends',
-  },
-  logout: {
-    id: 'settings.navigation.logout',
-    defaultMessage: '!!!Logout',
   },
 });
 
@@ -62,7 +46,6 @@ export default @inject('stores') @observer class SettingsNavigation extends Comp
   render() {
     const { serviceCount, workspaceCount, stores } = this.props;
     const { isDarkThemeActive } = stores.ui;
-    const { router, user } = stores;
     const { intl } = this.context;
 
     return (
@@ -104,43 +87,13 @@ export default @inject('stores') @observer class SettingsNavigation extends Comp
           </Link>
         ) : null}
         <Link
-          to="/settings/user"
-          className="settings-navigation__link"
-          activeClassName="is-active"
-        >
-          {intl.formatMessage(messages.account)}
-        </Link>
-        <Link
-          to="/settings/team"
-          className="settings-navigation__link"
-          activeClassName="is-active"
-        >
-          {intl.formatMessage(messages.team)}
-          {!user.data.isPremium && (
-            <ProBadge inverted={!isDarkThemeActive && router.location.pathname === '/settings/team'} />
-          )}
-        </Link>
-        <Link
           to="/settings/app"
           className="settings-navigation__link"
           activeClassName="is-active"
         >
           {intl.formatMessage(messages.settings)}
         </Link>
-        <Link
-          to="/settings/invite"
-          className="settings-navigation__link"
-          activeClassName="is-active"
-        >
-          {intl.formatMessage(messages.inviteFriends)}
-        </Link>
         <span className="settings-navigation__expander" />
-        <Link
-          to="/auth/logout"
-          className="settings-navigation__link"
-        >
-          {intl.formatMessage(messages.logout)}
-        </Link>
       </div>
     );
   }

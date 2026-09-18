@@ -38,11 +38,11 @@ const messages = defineMessages({
   },
   openTodosDrawer: {
     id: 'sidebar.openTodosDrawer',
-    defaultMessage: '!!!Open Franz Todos',
+    defaultMessage: '!!!Open My Franz Todos',
   },
   closeTodosDrawer: {
     id: 'sidebar.closeTodosDrawer',
-    defaultMessage: '!!!Close Franz Todos',
+    defaultMessage: '!!!Close My Franz Todos',
   },
 });
 

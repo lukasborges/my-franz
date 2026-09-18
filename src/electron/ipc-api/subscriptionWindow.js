@@ -12,7 +12,7 @@ export default async ({ mainWindow }) => {
       subscriptionWindow = new BrowserWindow({
         parent: mainWindow,
         modal: true,
-        title: '🔒 Franz Supporter License',
+        title: '🔒 My Franz Supporter License',
         width: 800,
         height: windowBounds.height - 100,
         maxWidth: 800,

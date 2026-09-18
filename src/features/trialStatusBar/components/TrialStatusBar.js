@@ -12,11 +12,11 @@ import ProgressBar from './ProgressBar';
 const messages = defineMessages({
   restTime: {
     id: 'feature.trialStatusBar.restTime',
-    defaultMessage: '!!!Your Free Franz {plan} Trial ends in {time}.',
+    defaultMessage: '!!!Your Free My Franz {plan} Trial ends in {time}.',
   },
   expired: {
     id: 'feature.trialStatusBar.expired',
-    defaultMessage: '!!!Your free Franz {plan} Trial has expired, please upgrade your account.',
+    defaultMessage: '!!!Your free My Franz {plan} Trial has expired, please upgrade your account.',
   },
   cta: {
     id: 'feature.trialStatusBar.cta',

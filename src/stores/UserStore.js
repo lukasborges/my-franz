@@ -5,7 +5,6 @@ import localStorage from 'mobx-localstorage';
 import ms from 'ms';
 
 import { ipcRenderer } from 'electron';
-import { isDevMode } from '../environment';
 import Store from './lib/Store';
 import Request from './lib/Request';
 import CachedRequest from './lib/CachedRequest';
@@ -21,24 +20,6 @@ const debug = require('debug')('Franz:UserStore');
 // TODO: split stores into UserStore and AuthStore
 export default class UserStore extends Store {
   BASE_ROUTE = '/auth';
-
-  WELCOME_ROUTE = `${this.BASE_ROUTE}/welcome`;
-
-  LOGIN_ROUTE = `${this.BASE_ROUTE}/login`;
-
-  LOGOUT_ROUTE = `${this.BASE_ROUTE}/logout`;
-
-  SIGNUP_ROUTE = `${this.BASE_ROUTE}/signup`;
-
-  PRICING_ROUTE = `${this.BASE_ROUTE}/signup/pricing`;
-
-  SETUP_ROUTE = `${this.BASE_ROUTE}/signup/setup`;
-
-  IMPORT_ROUTE = `${this.BASE_ROUTE}/signup/import`;
-
-  INVITE_ROUTE = `${this.BASE_ROUTE}/signup/invite`;
-
-  PASSWORD_ROUTE = `${this.BASE_ROUTE}/password`;
 
   @observable loginRequest = new Request(this.api.user, 'login');
 
@@ -114,39 +95,6 @@ export default class UserStore extends Store {
     this._migrateUserLocale();
   }
 
-  // Routes
-  get loginRoute() {
-    return this.LOGIN_ROUTE;
-  }
-
-  get logoutRoute() {
-    return this.LOGOUT_ROUTE;
-  }
-
-  get signupRoute() {
-    return this.SIGNUP_ROUTE;
-  }
-
-  get pricingRoute() {
-    return this.PRICING_ROUTE;
-  }
-
-  get setupRoute() {
-    return this.SETUP_ROUTE;
-  }
-
-  get inviteRoute() {
-    return this.INVITE_ROUTE;
-  }
-
-  get importRoute() {
-    return this.IMPORT_ROUTE;
-  }
-
-  get passwordRoute() {
-    return this.PASSWORD_ROUTE;
-  }
-
   // Data
   @computed get isLoggedIn() {
     return Boolean(localStorage.getItem('authToken'));
@@ -200,14 +148,6 @@ export default class UserStore extends Store {
     this.stores.router.push('/');
 
     gaEvent('User', 'login');
-  }
-
-  @action _tokenLogin(authToken) {
-    this._setUserData(authToken);
-
-    this.stores.router.push('/');
-
-    gaEvent('User', 'tokenLogin');
   }
 
   @action async _signup({
@@ -341,37 +281,12 @@ export default class UserStore extends Store {
 
     ipcRenderer.send(USER_LOGIN_STATUS, this.isLoggedIn);
 
-    const { router } = this.stores;
-    const currentRoute = router.location.pathname;
-    if (!this.isLoggedIn
-      && currentRoute.includes('token=')) {
-      router.push(this.WELCOME_ROUTE);
-      const token = currentRoute.split('=')[1];
-
-      const data = this._parseToken(token);
-      if (data) {
-        // Give this some time to sink
-        setTimeout(() => {
-          this._tokenLogin(token);
-        }, 1000);
-      }
-    } else if (!this.isLoggedIn) {
+    if (!this.isLoggedIn) {
       // Self-built: no Franz account needed, sign in to the embedded local server
       if (!this.isAutoLoginRunning) {
         this.isAutoLoginRunning = true;
         this._login({ email: 'franz@localhost', password: 'local' })
           .finally(() => { this.isAutoLoginRunning = false; });
-      }
-    } else if (this.isLoggedIn
-      && currentRoute === this.LOGOUT_ROUTE) {
-      this.actions.user.logout();
-      router.push(this.LOGIN_ROUTE);
-    } else if (this.isLoggedIn
-      && currentRoute.includes(this.BASE_ROUTE)
-      && (this.hasCompletedSignup
-        || this.hasCompletedSignup === null)) {
-      if (!isDevMode) {
-        this.stores.router.push('/');
       }
     }
   };

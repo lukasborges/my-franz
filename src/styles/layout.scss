@@ -48,8 +48,8 @@ html { overflow: hidden; }
   }
 }
 
-body:not(.darwin):not(.isFullScreen) .app .app__content {
-  height: calc(100% - $windows-title-bar-height);
+.app .app__content {
+  height: 100%;
 }
 
 .app {

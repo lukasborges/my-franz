@@ -12,11 +12,11 @@ import UserStore from '../../../stores/UserStore';
 const messages = defineMessages({
   action: {
     id: 'feature.delayApp.upgrade.action',
-    defaultMessage: '!!!Get a Franz Supporter License',
+    defaultMessage: '!!!Get a My Franz Supporter License',
   },
   actionTrial: {
     id: 'feature.delayApp.trial.action',
-    defaultMessage: '!!!Yes, I want the free 14 day trial of Franz Professional',
+    defaultMessage: '!!!Yes, I want the free 14 day trial of My Franz Professional',
   },
   shortAction: {
     id: 'feature.delayApp.upgrade.actionShort',
@@ -24,7 +24,7 @@ const messages = defineMessages({
   },
   shortActionTrial: {
     id: 'feature.delayApp.trial.actionShort',
-    defaultMessage: '!!!Activate the free Franz Professional trial',
+    defaultMessage: '!!!Activate the free My Franz Professional trial',
   },
   noStringsAttachedHeadline: {
     id: 'pricing.trial.terms.headline',

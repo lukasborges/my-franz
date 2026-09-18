@@ -8,8 +8,6 @@ import { Component as DelayApp } from '../../features/delayApp';
 import InfoBar from '../ui/InfoBar';
 import ErrorBoundary from '../util/ErrorBoundary';
 
-import { isMac } from '../../environment';
-import AppMenuBar from '../../features/appMenu';
 import Todos from '../../features/todos/containers/TodosScreen';
 import TrialStatusBar from '../../features/trialStatusBar/containers/TrialStatusBarScreen';
 import WebControlsScreen from '../../features/webControls/containers/WebControlsScreen';
@@ -106,7 +104,6 @@ class AppLayout extends Component {
 
     return (
       <ErrorBoundary>
-        {!isMac && <AppMenuBar />}
         <div className="app">
           <div className={`app__content ${classes.appContent}`}>
             {workspacesDrawer}

@@ -22,35 +22,35 @@ const messages = defineMessages({
   },
   headlineTrial: {
     id: 'feature.delayApp.trial.headline',
-    defaultMessage: '!!!Get the free Franz Professional 14 day trial and skip the line',
+    defaultMessage: '!!!Get the free My Franz Professional 14 day trial and skip the line',
   },
   action: {
     id: 'feature.delayApp.upgrade.action',
-    defaultMessage: '!!!Upgrade Franz',
+    defaultMessage: '!!!Upgrade My Franz',
   },
   actionTrial: {
     id: 'feature.delayApp.trial.action',
-    defaultMessage: '!!!Yes, I want the free 14 day trial of Franz Professional',
+    defaultMessage: '!!!Yes, I want the free 14 day trial of My Franz Professional',
   },
   text: {
     id: 'feature.delayApp.text',
-    defaultMessage: '!!!Franz will continue in {seconds} seconds.',
+    defaultMessage: '!!!My Franz will continue in {seconds} seconds.',
   },
   continueInText: {
     id: 'feature.delayApp.continueInText',
-    defaultMessage: '!!!You can continue with Franz in {seconds} seconds.',
+    defaultMessage: '!!!You can continue with My Franz in {seconds} seconds.',
   },
   continuing: {
     id: 'feature.delayApp.continuing',
-    defaultMessage: '!!!Continuing Franz',
+    defaultMessage: '!!!Continuing My Franz',
   },
   continueWithApp: {
     id: 'feature.delayApp.continueWithApp',
-    defaultMessage: '!!!Continue to Franz',
+    defaultMessage: '!!!Continue to My Franz',
   },
   poweredByIntro: {
     id: 'feature.delayApp.poweredByIntro',
-    defaultMessage: '!!!Franz is proudly powered by:',
+    defaultMessage: '!!!My Franz is proudly powered by:',
   },
   advertisingDisclaimer: {
     id: 'feature.delayApp."feature.delayApp.adDisclaimer" : "Ads"',

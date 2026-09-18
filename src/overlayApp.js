@@ -17,7 +17,6 @@ import SubscriptionPopupScreen from './containers/subscription/SubscriptionPopup
 import { Component as BasicAuth } from './features/basicAuth';
 import { Component as DesktopCapturer } from './features/desktopCapturer';
 import PlanSelectionScreen from './features/planSelection/containers/PlanSelectionScreen';
-import ShareFranz from './features/shareFranz/Component';
 import translations from './i18n/translations';
 import { GET_SETTINGS, SEND_SETTINGS } from './ipcChannels';
 
@@ -39,7 +38,6 @@ const setup = (settings) => {
     >
       <ThemeProvider theme={theme(settings.theme)}>
         <Router history={hashHistory}>
-          <Route path="/share-franz" component={ShareFranz} />
           <Route path="/payment/:url" component={SubscriptionPopupScreen} />
           <Route path="/plan-selection" component={PlanSelectionScreen} />
           <Route path="/screen-share/:webContentsId" component={DesktopCapturer} />

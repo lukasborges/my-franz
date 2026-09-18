@@ -16,7 +16,7 @@ import { RESIZE_TODO_VIEW } from '../../../ipcChannels';
 const messages = defineMessages({
   premiumInfo: {
     id: 'feature.todos.premium.info',
-    defaultMessage: '!!!Franz Todos are available to premium users now!',
+    defaultMessage: '!!!My Franz Todos are available to premium users now!',
   },
   upgradeCTA: {
     id: 'feature.todos.premium.upgrade',

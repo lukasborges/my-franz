@@ -13,7 +13,7 @@ import { FeatureItem } from '../ui/FeatureItem';
 const messages = defineMessages({
   submitButtonLabel: {
     id: 'subscription.cta.activateTrial',
-    defaultMessage: '!!!Yes, start the free Franz Professional trial',
+    defaultMessage: '!!!Yes, start the free My Franz Professional trial',
   },
   allOptionsButton: {
     id: 'subscription.cta.allOptions',
@@ -21,11 +21,11 @@ const messages = defineMessages({
   },
   teaserHeadline: {
     id: 'settings.account.headlineTrialUpgrade',
-    defaultMessage: '!!!Get the free 14 day Franz Professional Trial',
+    defaultMessage: '!!!Get the free 14 day My Franz Professional Trial',
   },
   includedFeatures: {
     id: 'subscription.includedProFeatures',
-    defaultMessage: '!!!The Franz Professional Plan includes:',
+    defaultMessage: '!!!The My Franz Professional Plan includes:',
   },
   noStringsAttachedHeadline: {
     id: 'pricing.trial.terms.headline',

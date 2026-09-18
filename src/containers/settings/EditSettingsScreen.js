@@ -26,7 +26,7 @@ import ServicesStore from '../../stores/ServicesStore';
 const messages = defineMessages({
   autoLaunchOnStart: {
     id: 'settings.app.form.autoLaunchOnStart',
-    defaultMessage: '!!!Launch Franz on start',
+    defaultMessage: '!!!Launch My Franz on start',
   },
   autoLaunchInBackground: {
     id: 'settings.app.form.autoLaunchInBackground',
@@ -34,15 +34,15 @@ const messages = defineMessages({
   },
   runInBackground: {
     id: 'settings.app.form.runInBackground',
-    defaultMessage: '!!!Keep Franz in background when closing the window',
+    defaultMessage: '!!!Keep My Franz in background when closing the window',
   },
   enableSystemTray: {
     id: 'settings.app.form.enableSystemTray',
-    defaultMessage: '!!!Show Franz in system tray',
+    defaultMessage: '!!!Show My Franz in system tray',
   },
   minimizeToSystemTray: {
     id: 'settings.app.form.minimizeToSystemTray',
-    defaultMessage: '!!!Minimize Franz to system tray',
+    defaultMessage: '!!!Minimize My Franz to system tray',
   },
   language: {
     id: 'settings.app.form.language',
@@ -74,7 +74,7 @@ const messages = defineMessages({
   },
   enableTodos: {
     id: 'settings.app.form.enableTodos',
-    defaultMessage: '!!!Enable Franz Todos',
+    defaultMessage: '!!!Enable My Franz Todos',
   },
   keepAllWorkspacesLoaded: {
     id: 'settings.app.form.keepAllWorkspacesLoaded',

@@ -3,7 +3,6 @@
 import {
   app,
   BrowserWindow,
-  dialog,
   ipcMain,
   shell,
 } from 'electron';
@@ -56,7 +55,6 @@ import { appId } from './package.json'; // eslint-disable-line import/no-unresol
 import {
   DEFAULT_APP_SETTINGS,
   DEFAULT_WINDOW_OPTIONS,
-  LIVE_API_WEBSITE,
 } from './config';
 import { openOverlay } from './electron/ipc-api/overlayWindow';
 import { asarPath } from './helpers/asar-helpers';
@@ -375,34 +373,17 @@ app.on('ready', async () => {
       arguments: `${isDevMode ? `${__dirname} ` : ''}--reset-window`,
       iconPath: asarPath(path.join(isDevMode ? `${__dirname}../src/` : __dirname, 'assets/images/taskbar/win32/display.ico')),
       iconIndex: 0,
-      title: 'Move Franz to Current Display',
-      description: 'Restore the position and size of Franz',
+      title: 'Move My Franz to Current Display',
+      description: 'Restore the position and size of My Franz',
     }, {
       program: process.execPath,
       arguments: `${isDevMode ? `${__dirname} ` : ''}--quit`,
       iconIndex: 0,
-      title: 'Quit Franz',
+      title: 'Quit My Franz',
     }]);
   }
 
   createWindow();
-
-  if (app.runningUnderARM64Translation && isMac) {
-    dialog.showMessageBox(mainWindow, {
-      message: 'Franz for Apple Silicon',
-      detail: 'Enjoy Franz with better performance and stability on your Mac.',
-      buttons: [
-        'Later',
-        'Download Franz for Apple Silicon',
-      ],
-      defaultId: 1,
-      cancelId: 0,
-    }).then(({ response }) => {
-      if (response === 1) {
-        shell.openExternal(`${LIVE_API_WEBSITE}/download?platform=mac-arm64`);
-      }
-    });
-  }
 });
 
 // This is the worst possible implementation as the webview.webContents based callback doesn't work 🖕
