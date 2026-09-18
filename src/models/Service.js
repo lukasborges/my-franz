@@ -46,6 +46,8 @@ export default class Service {
 
   @observable isIndirectMessageBadgeEnabled = true;
 
+  @observable useTitleIndicator = false;
+
   @observable iconUrl = '';
 
   @observable hasCustomUploadedIcon = false;
@@ -112,6 +114,9 @@ export default class Service {
 
     this.isIndirectMessageBadgeEnabled = data.isIndirectMessageBadgeEnabled !== undefined
       ? data.isIndirectMessageBadgeEnabled : this.isIndirectMessageBadgeEnabled;
+
+    this.useTitleIndicator = data.useTitleIndicator !== undefined
+      ? data.useTitleIndicator : this.useTitleIndicator;
 
     this.isMuted = data.isMuted !== undefined ? data.isMuted : this.isMuted;
 

@@ -39,6 +39,7 @@ interface IServiceState {
   hasCustomIcon: boolean,
   isRestricted: boolean;
   isHibernating: boolean;
+  useTitleIndicator: boolean;
 }
 
 interface IServiceConfig {
@@ -176,6 +177,17 @@ export class ServiceBrowserView {
         if (channel === 'hello') {
           this.webContents.send('initialize-recipe', this.state, this.recipe);
         }
+      });
+
+      this.webContents.on('page-title-updated', (e, title) => {
+        if (!this.state.useTitleIndicator) return;
+
+        const match = title.match(/^\((\d+)\)/);
+        const count = match ? Number(match[1]) : 0;
+
+        debug('Detected title-based unread count', this.config.name, count);
+
+        this.window.webContents.send('messages', this.config.id, { direct: count, indirect: 0 });
       });
 
       this.webContents.on('did-start-loading', () => {

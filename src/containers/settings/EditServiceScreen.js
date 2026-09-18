@@ -45,6 +45,10 @@ const messages = defineMessages({
     id: 'settings.service.form.enableBadge',
     defaultMessage: '!!!Show unread message badges',
   },
+  enableTitleIndicator: {
+    id: 'settings.service.form.enableTitleIndicator',
+    defaultMessage: '!!!Get unread count from tab title',
+  },
   enableAudio: {
     id: 'settings.service.form.enableAudio',
     defaultMessage: '!!!Enable audio',
@@ -161,6 +165,11 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           label: intl.formatMessage(messages.enableBadge),
           value: service.isBadgeEnabled,
           default: true,
+        },
+        useTitleIndicator: {
+          label: intl.formatMessage(messages.enableTitleIndicator),
+          value: service.useTitleIndicator,
+          default: false,
         },
         isMuted: {
           label: intl.formatMessage(messages.enableAudio),
