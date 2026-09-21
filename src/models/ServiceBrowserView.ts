@@ -26,6 +26,10 @@ import {
 } from '../ipcChannels';
 import RecipeModel from './Recipe';
 
+// Sites that flag unread messages by swapping the favicon instead of the
+// title. Google Chat: .../favicon_chat_new_notif_<variant>.ico
+const UNREAD_FAVICON_PATTERN = /favicon_chat_new_notif_/;
+
 const debug = require('debug')('Franz:Models:ServiceBrowserView');
 
 const isGoogleOAuthURL = (url: string) => /\/(o\/oauth2|signin\/oauth|oauth)/.test(new URL(url).pathname);
@@ -81,6 +85,10 @@ export class ServiceBrowserView {
   settings: Settings;
 
   pollInterval: NodeJS.Timeout | undefined;
+
+  titleUnreadCount = 0;
+
+  hasUnreadFavicon = false;
 
   isAttached = false;
 
@@ -184,11 +192,19 @@ export class ServiceBrowserView {
 
       this.webContents.on('page-title-updated', (e, title) => {
         const match = title.match(/^\((\d+)\)/);
-        const count = match ? Number(match[1]) : 0;
+        this.titleUnreadCount = match ? Number(match[1]) : 0;
 
-        debug('Detected title-based unread count', this.config.name, count);
+        debug('Detected title-based unread count', this.config.name, this.titleUnreadCount);
 
-        this.window.webContents.send('messages', this.config.id, { direct: count, indirect: 0 });
+        this.sendUnreadCount();
+      });
+
+      this.webContents.on('page-favicon-updated', (e, favicons) => {
+        this.hasUnreadFavicon = favicons.some(url => UNREAD_FAVICON_PATTERN.test(url));
+
+        debug('Detected favicon-based unread state', this.config.name, this.hasUnreadFavicon, favicons);
+
+        this.sendUnreadCount();
       });
 
       this.webContents.on('did-start-loading', () => {
@@ -361,6 +377,17 @@ export class ServiceBrowserView {
     }
 
     this.isAttached = false;
+  }
+
+  /**
+   * Unread state comes from the page itself (title "(N)" prefix and favicon),
+   * never from the recipe's setBadge.
+   */
+  sendUnreadCount() {
+    this.window.webContents.send('messages', this.config.id, {
+      direct: this.titleUnreadCount,
+      indirect: this.hasUnreadFavicon ? 1 : 0,
+    });
   }
 
   destroy() {
