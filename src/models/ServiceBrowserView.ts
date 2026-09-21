@@ -31,7 +31,8 @@ const NAVIGATION_STALL_PROBE_TIMEOUT = 2000;
 
 // Sites that flag unread messages by swapping the favicon instead of the
 // title, e.g. Google Chat: .../chat_2026_logo_favicon_dot_64px.png
-const UNREAD_FAVICON_PATTERN = /notif|unread|badge|alert|[_-]dot[_.-]/i;
+// (its read state is .../favicon_no_dot_64px.png, hence the lookbehind).
+const UNREAD_FAVICON_PATTERN = /notif|unread|badge|alert|(?<!no)[_-]dot[_.-]/i;
 
 // "(3) WhatsApp", "Inbox (2) - user@example.com - Mail"
 const TITLE_UNREAD_PATTERN = /\((\d+)\)/;
