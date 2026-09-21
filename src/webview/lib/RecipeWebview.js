@@ -106,8 +106,8 @@ class RecipeWebview {
     }
   }
 
-  static clearCache() {
-    ipcRenderer.invoke('clearServiceCache');
+  static clearCache(targets) {
+    ipcRenderer.invoke('clearServiceCache', targets);
   }
 
   // --- Ferdium recipe API compatibility -----------------------------------
@@ -132,8 +132,8 @@ class RecipeWebview {
     }
   }
 
-  clearStorageData() {
-    RecipeWebview.clearCache();
+  clearStorageData(serviceId, targets) {
+    RecipeWebview.clearCache(targets);
   }
 
   openNewWindow(url) {
