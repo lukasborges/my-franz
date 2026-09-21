@@ -171,6 +171,10 @@ export class ServiceBrowserView {
   initialize() {
     if (!this.isRestricted) {
       this.webContents.on('ipc-message', (e, channel, data) => {
+        // Recipe-reported counts (setBadge) are ignored on purpose: the tab
+        // title is the only unread source, for every service.
+        if (channel === 'messages') return;
+
         this.window.webContents.send(channel, this.config.id, data);
 
         if (channel === 'hello') {
