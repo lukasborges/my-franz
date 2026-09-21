@@ -26,6 +26,9 @@ import {
 } from '../ipcChannels';
 import RecipeModel from './Recipe';
 
+const NAVIGATION_STALL_TIMEOUT = 5000;
+const NAVIGATION_STALL_PROBE_TIMEOUT = 2000;
+
 // Sites that flag unread messages by swapping the favicon instead of the
 // title, e.g. Google Chat: .../chat_2026_logo_favicon_dot_64px.png
 const UNREAD_FAVICON_PATTERN = /notif|unread|badge|alert|[_-]dot[_.-]/i;
@@ -88,6 +91,8 @@ export class ServiceBrowserView {
   settings: Settings;
 
   pollInterval: NodeJS.Timeout | undefined;
+
+  navigationStallTimer: NodeJS.Timeout | null = null;
 
   titleUnreadCount = 0;
 
@@ -245,8 +250,10 @@ export class ServiceBrowserView {
       });
 
       this.webContents.on('did-fail-load', (...args) => {
-        const [, errorCode, errorDescription, , isMainFrame] = args;
-        debug('Service failed to load', this.config.name);
+        const [, errorCode, errorDescription, validatedURL, isMainFrame] = args;
+        debug('Service failed to load', this.config.name, {
+          errorCode, errorDescription, validatedURL, isMainFrame,
+        });
         if (isMainFrame && errorCode !== -21 && errorCode !== -3) {
           this.setWebContentsState({
             isError: true,
@@ -264,6 +271,33 @@ export class ServiceBrowserView {
         if (typeof this.recipe.eventDidFinishLoad === 'function') {
           this.recipe.eventDidFinishLoad(this, ...args);
         }
+      });
+
+      this.webContents.on('did-start-navigation', (event: any) => {
+        if (event?.isMainFrame && !event.isSameDocument) {
+          debug('Main frame navigation started', this.config.name, event.url);
+          this.armNavigationStallWatchdog(event.url);
+        }
+      });
+
+      this.webContents.on('did-navigate', () => this.disarmNavigationStallWatchdog());
+      this.webContents.on('did-fail-load', () => this.disarmNavigationStallWatchdog());
+      this.webContents.on('did-stop-loading', () => this.disarmNavigationStallWatchdog());
+
+      this.webContents.on('will-prevent-unload', (event) => {
+        // Without this handler Electron answers the beforeunload prompt with
+        // "stay" and silently cancels the navigation, leaving the page stuck
+        // (Google Meet: endless "Joining..." overlay).
+        debug('Page tried to prevent unload, allowing it', this.config.name, this.webContents.getURL());
+        event.preventDefault();
+      });
+
+      this.webContents.on('unresponsive', () => {
+        debug('Renderer unresponsive', this.config.name, this.webContents.getURL());
+      });
+
+      this.webContents.on('responsive', () => {
+        debug('Renderer responsive again', this.config.name);
       });
 
       this.webContents.on('will-navigate', (...args) => {
@@ -383,6 +417,33 @@ export class ServiceBrowserView {
   }
 
   /**
+   * Chromium occasionally leaves a main-frame navigation pending forever before
+   * it ever reaches the network, and while it is pending the current document's
+   * task queues stay paused, so the page looks frozen (Google Meet: endless
+   * "Joining..."). webContents.stop() releases it instantly and a fresh
+   * navigation to the same URL succeeds, so do that automatically.
+   */
+  armNavigationStallWatchdog(url: string) {
+    this.disarmNavigationStallWatchdog();
+
+    this.navigationStallTimer = setTimeout(async () => {
+      this.navigationStallTimer = null;
+      if (!this.webContents || this.webContents.isDestroyed() || !this.webContents.isLoading()) return;
+
+      const rendererAnswered = await Promise.race([
+        this.webContents.executeJavaScript('1').then(() => true).catch(() => false),
+        new Promise<boolean>(resolve => setTimeout(() => resolve(false), NAVIGATION_STALL_PROBE_TIMEOUT)),
+      ]);
+
+      if (rendererAnswered || !this.webContents.isWaitingForResponse()) return;
+
+      debug('Navigation stalled before reaching the network, cancelling and retrying', this.config.name, url);
+      this.webContents.stop();
+      this.webContents.loadURL(url);
+    }, NAVIGATION_STALL_TIMEOUT);
+  }
+
+  /**
    * Unread state comes from the page itself (title "(N)" prefix and favicon),
    * never from the recipe's setBadge.
    */
@@ -393,10 +454,19 @@ export class ServiceBrowserView {
     });
   }
 
+  disarmNavigationStallWatchdog() {
+    if (this.navigationStallTimer) {
+      clearTimeout(this.navigationStallTimer);
+      this.navigationStallTimer = null;
+    }
+  }
+
   destroy() {
-    if (this.webContents) {
+    if (this.webContents && !this.webContents.isDestroyed()) {
       clearInterval(this.pollInterval);
-      this.webContents.forcefullyCrashRenderer();
+      // Actually tear the page down. Crashing the renderer left a dead
+      // webContents alive in the service partition for every disable/enable.
+      this.webContents.close({ waitForBeforeUnload: false });
     }
   }
 
