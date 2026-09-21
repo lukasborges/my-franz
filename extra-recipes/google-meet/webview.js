@@ -5,7 +5,7 @@ function _interopRequireDefault(obj) {
 const _path = _interopRequireDefault(require('path'));
 
 window.addEventListener('load', () => {
-  const title = document.querySelector('.window-title').textContent;
+  const title = document.querySelector('.window-title')?.textContent;
 
   if (title && title.includes('Google Chrome 36+')) {
     window.location.reload();

@@ -32,4 +32,6 @@ function getDisplayMedia() {
   });
 }
 
-window.navigator.mediaDevices.getDisplayMedia = getDisplayMedia;
+if (window.navigator.mediaDevices) {
+  window.navigator.mediaDevices.getDisplayMedia = getDisplayMedia;
+}
