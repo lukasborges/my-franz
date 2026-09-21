@@ -27,8 +27,8 @@ import {
 import RecipeModel from './Recipe';
 
 // Sites that flag unread messages by swapping the favicon instead of the
-// title, e.g. Google Chat: .../favicon_chat_new_notif_<variant>.ico
-const UNREAD_FAVICON_PATTERN = /notif|unread|badge|alert/i;
+// title, e.g. Google Chat: .../chat_2026_logo_favicon_dot_64px.png
+const UNREAD_FAVICON_PATTERN = /notif|unread|badge|alert|[_-]dot[_.-]/i;
 
 // "(3) WhatsApp", "Inbox (2) - user@example.com - Mail"
 const TITLE_UNREAD_PATTERN = /\((\d+)\)/;
