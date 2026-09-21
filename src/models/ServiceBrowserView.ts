@@ -27,8 +27,11 @@ import {
 import RecipeModel from './Recipe';
 
 // Sites that flag unread messages by swapping the favicon instead of the
-// title. Google Chat: .../favicon_chat_new_notif_<variant>.ico
-const UNREAD_FAVICON_PATTERN = /favicon_chat_new_notif_/;
+// title, e.g. Google Chat: .../favicon_chat_new_notif_<variant>.ico
+const UNREAD_FAVICON_PATTERN = /notif|unread|badge|alert/i;
+
+// "(3) WhatsApp", "Inbox (2) - user@example.com - Mail"
+const TITLE_UNREAD_PATTERN = /\((\d+)\)/;
 
 const debug = require('debug')('Franz:Models:ServiceBrowserView');
 
@@ -191,7 +194,7 @@ export class ServiceBrowserView {
       });
 
       this.webContents.on('page-title-updated', (e, title) => {
-        const match = title.match(/^\((\d+)\)/);
+        const match = title.match(TITLE_UNREAD_PATTERN);
         this.titleUnreadCount = match ? Number(match[1]) : 0;
 
         debug('Detected title-based unread count', this.config.name, this.titleUnreadCount);
