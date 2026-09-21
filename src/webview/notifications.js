@@ -49,3 +49,30 @@ class Notification {
 }
 
 window.Notification = Notification;
+
+// Electron never displays persistent (service worker) notifications, and
+// Google Chat, Gmail & co. fire theirs through
+// `registration.showNotification()` from the page. Route those through the
+// same IPC path as `new Notification()` so they reach the OS.
+// Only keep options that are valid for a non-persistent notification
+// (`actions` throws there) and that survive the IPC structured clone
+// (`data` may hold arbitrary objects).
+const NON_PERSISTENT_OPTION_KEYS = ['body', 'icon', 'image', 'badge', 'tag', 'lang', 'dir', 'silent', 'requireInteraction'];
+
+const toNonPersistentOptions = (options = {}) => Object.fromEntries(
+  NON_PERSISTENT_OPTION_KEYS
+    .filter(key => options[key] !== undefined)
+    .map(key => [key, options[key]]),
+);
+
+const { ServiceWorkerRegistration } = window;
+if (ServiceWorkerRegistration) {
+  ServiceWorkerRegistration.prototype.showNotification = function showNotification(title, options = {}) {
+    debug('Intercepted service worker showNotification', title, options);
+    // eslint-disable-next-line no-new
+    new Notification(title, toNonPersistentOptions(options));
+    return Promise.resolve();
+  };
+
+  ServiceWorkerRegistration.prototype.getNotifications = () => Promise.resolve([]);
+}
